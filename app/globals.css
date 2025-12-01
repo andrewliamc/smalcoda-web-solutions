@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background-color: #0c1a16;
+}
+
+body {
+  @apply bg-brand-night text-brand-sand antialiased;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  background: radial-gradient(circle at 10% 20%, rgba(159, 189, 170, 0.14), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(194, 169, 138, 0.12), transparent 30%),
+    linear-gradient(120deg, #0c1a16 0%, #0c1a16 45%, #10231d 100%);
+  min-height: 100vh;
+}
+
+a {
+  @apply transition-colors duration-200 ease-out;
+}
+
+::selection {
+  background: rgba(159, 189, 170, 0.25);
+  color: #e8e5d8;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-heading tracking-tight text-brand-sand;
+}
+
+.eyebrow {
+  @apply uppercase tracking-[0.2em] text-xs text-brand-sage font-medium;
+}
