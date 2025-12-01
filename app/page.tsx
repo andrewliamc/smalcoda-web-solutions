@@ -32,20 +32,6 @@ export default function HomePage() {
                 View recent work
               </Button>
             </div>
-            <div className="flex flex-wrap gap-6 text-sm text-brand-sand/70">
-              <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-brand-sage" />
-                Remote-first
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-brand-sage" />
-                Design-forward
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-brand-sage" />
-                Ship with calm
-              </span>
-            </div>
           </div>
           <div className="glass rounded-3xl border border-brand-sage/20 bg-brand-moss/50 p-6 shadow-soft">
             <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-brand-moss/60 via-brand-night to-brand-night p-6">
@@ -59,16 +45,16 @@ export default function HomePage() {
                   digital experiences that feel intentional.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sage/70" />
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
                     <span>Next.js, TypeScript, Tailwind foundations</span>
                   </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sage/70" />
-                    <span>Design systems thinking for flexible sites</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
+                    <span>Design systems for flexible sites</span>
                   </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sage/70" />
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
                     <span>Reliable delivery with clear communication</span>
                   </li>
                 </ul>
@@ -83,7 +69,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">What I do</p>
-              <h2 className="section-heading">Service snapshot</h2>
+              <h2 className="section-heading">Service Snapshot</h2>
             </div>
             <Button href="/services" variant="secondary">
               Explore services

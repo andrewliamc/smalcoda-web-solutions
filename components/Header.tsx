@@ -30,11 +30,11 @@ export function Header() {
       <Container className="flex items-center justify-between py-4">
         <Link href="/" className="group flex items-center gap-3">
           <div className="flex flex-col leading-tight">
-            <span className="text-lg font-heading tracking-[0.12em] text-brand-sand group-hover:text-brand-sage">
+            <span className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand group-hover:text-brand-sage">
               SMALCODA
             </span>
-            <span className="text-[11px] uppercase tracking-[0.28em] text-brand-sand/60">
-              Web Solutions
+            <span className="text-[11px] font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
+              WEB SOLUTIONS
             </span>
           </div>
         </Link>
