@@ -18,10 +18,10 @@ export default function HomePage() {
       <Section className="pt-10">
         <Container className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div className="space-y-6">
-            <p className="eyebrow">SmalCoda Web Solutions</p>
-            <h1 className="text-4xl font-heading text-brand-sand sm:text-5xl md:text-6xl">
+            <h1 className="eyebrow">SmalCoda Web Solutions</h1>
+            <h2 className="text-4xl font-heading text-brand-sand sm:text-5xl md:text-6xl">
               Small code. Big impact.
-            </h1>
+            </h2>
             <p className="text-lg text-brand-sand/80">
               SmalCoda Web Solutions builds calm, modern, handcrafted websites for small businesses and creative teams across Hackensack, Bergen County, and North Jersey. We design clean interfaces, develop fast and accessible sites, and help local businesses create a digital presence that feels as good as it looks.
             </p>
