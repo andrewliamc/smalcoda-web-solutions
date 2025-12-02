@@ -23,8 +23,7 @@ export default function HomePage() {
               Small code. Big impact.
             </h1>
             <p className="text-lg text-brand-sand/80">
-              SmalCoda Web Solutions builds modern, handcrafted web experiences for small
-              businesses and creative teams who care how their sites feel and function.
+              SmalCoda Web Solutions builds calm, modern, handcrafted websites for small businesses and creative teams across Hackensack, Bergen County, and North Jersey. We design clean interfaces, develop fast and accessible sites, and help local businesses create a digital presence that feels as good as it looks.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact">Start a project</Button>
