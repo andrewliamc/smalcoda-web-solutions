@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
@@ -14,22 +15,85 @@ export const metadata: Metadata = {
 async function handleContact(formData: FormData) {
   "use server";
 
-  const submission = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    company: formData.get("company"),
-    website: formData.get("website"),
-    budget: formData.get("budget"),
-    timeline: formData.get("timeline"),
-    projectTypes: formData.getAll("projectTypes"),
-    details: formData.get("details"),
-  };
+  const sanitize = (value: FormDataEntryValue | null) =>
+    String(value ?? "").trim();
 
-  // TODO: Connect to email service or CRM.
-  console.log("Contact inquiry from smalcoda-web-solutions.com", submission);
+  const name = sanitize(formData.get("name"));
+  const email = sanitize(formData.get("email"));
+  const company = sanitize(formData.get("company"));
+  const website = sanitize(formData.get("website"));
+  const budget = sanitize(formData.get("budget"));
+  const timeline = sanitize(formData.get("timeline"));
+  const projectTypes = formData
+    .getAll("projectTypes")
+    .map((value) => sanitize(value))
+    .filter(Boolean);
+  const details = sanitize(formData.get("details"));
+
+  const formspreeId = process.env.FORMSPREE_ENDPOINT;
+  const endpoint = formspreeId
+    ? `https://formspree.io/f/${formspreeId}`
+    : null;
+
+  try {
+    if (!name || !email) {
+      throw new Error("Name and email are required.");
+    }
+
+    if (!endpoint) {
+      throw new Error("Contact form is not configured yet. Please try email instead.");
+    }
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        company,
+        website,
+        budget,
+        timeline,
+        projectTypes: projectTypes.join(", "),
+        details,
+      }),
+    });
+
+    if (!response.ok) {
+      let errorText = "";
+      try {
+        errorText = await response.text();
+      } catch (error) {
+        console.error("Unable to read Formspree response body", error);
+      }
+      console.error("Formspree submission failed", response.status, errorText);
+      throw new Error("Message not sent. Please try again.");
+    }
+
+    return redirect("/contact?success=1");
+  } catch (error) {
+    console.error("Failed to submit contact form", error);
+    const message =
+      error instanceof Error && error.message
+        ? error.message
+        : "Message not sent. Please try again.";
+    return redirect(`/contact?error=${encodeURIComponent(message)}`);
+  }
 }
 
-export default function ContactPage() {
+export default function ContactPage({
+  searchParams,
+}: {
+  searchParams?: { success?: string; error?: string };
+}) {
+  const successMessage =
+    searchParams?.success === "1" ? "Thanks! Your message has been sent." : "";
+  const errorMessage =
+    typeof searchParams?.error === "string" ? searchParams.error : "";
+
   return (
     <>
       <PageHeader
@@ -39,42 +103,55 @@ export default function ContactPage() {
       />
 
       <Section>
-        <Container className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
-          <div className="space-y-4">
-            <h2 className="section-heading">How this works</h2>
-            <p className="text-brand-sand/80">
-              Share a bit about what you’re building and where you are in the process.
-              I’ll review, follow up with any clarifying questions, and propose a
-              right-sized plan with a timeline and investment range.
-            </p>
-            <ul className="space-y-3 text-brand-sand/80">
-              {[
-                "Weekly updates and structured feedback windows.",
-                "Transparent milestones tied to outcomes.",
-                "Design, development, and QA handled in one place.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-brand-sage/80" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="rounded-2xl border border-white/10 bg-brand-moss/60 p-5 text-sm text-brand-sand/80">
-              <p className="font-medium text-brand-sage">Prefer email?</p>
-              <p>
-                Reach out at{" "}
-                <a
-                  href="mailto:hello@smalcoda.studio"
-                  className="font-semibold text-brand-sage hover:text-brand-sand"
-                >
-                  hello@smalcoda.studio
-                </a>
-                . I’ll reply with a short fit check and booking link.
-              </p>
+        <Container className="space-y-6">
+          {successMessage && (
+            <div className="rounded-xl border border-green-500/40 bg-green-500/10 p-4 text-sm font-semibold text-green-100">
+              {successMessage}
             </div>
-          </div>
+          )}
+          {errorMessage && (
+            <div className="rounded-xl border border-red-500/40 bg-red-500/10 p-4 text-sm font-semibold text-red-100">
+              {errorMessage}
+            </div>
+          )}
 
-          <ContactForm action={handleContact} />
+          <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] md:items-start">
+            <div className="space-y-4">
+              <h2 className="section-heading">How this works</h2>
+              <p className="text-brand-sand/80">
+                Share a bit about what you’re building and where you are in the process.
+                I’ll review, follow up with any clarifying questions, and propose a
+                right-sized plan with a timeline and investment range.
+              </p>
+              <ul className="space-y-3 text-brand-sand/80">
+                {[
+                  "Weekly updates and structured feedback windows.",
+                  "Transparent milestones tied to outcomes.",
+                  "Design, development, and QA handled in one place.",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-brand-sage/80" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="rounded-2xl border border-white/10 bg-brand-moss/60 p-5 text-sm text-brand-sand/80">
+                <p className="font-medium text-brand-sage">Prefer email?</p>
+                <p>
+                  Reach out at{" "}
+                  <a
+                    href="mailto:hello@smalcoda.studio"
+                    className="font-semibold text-brand-sage hover:text-brand-sand"
+                  >
+                    hello@smalcoda.studio
+                  </a>
+                  . I’ll reply with a short fit check and booking link.
+                </p>
+              </div>
+            </div>
+
+            <ContactForm action={handleContact} />
+          </div>
         </Container>
       </Section>
 
