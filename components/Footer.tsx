@@ -16,16 +16,15 @@ export function Footer() {
       <Container className="flex flex-col gap-8 py-10 md:flex-row md:items-start md:justify-between">
         <div className="space-y-3">
           <div>
-            <p className="text-lg font-heading tracking-[0.12em] text-brand-sand">
+            <p className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand">
               SMALCODA
             </p>
-            <p className="text-xs uppercase tracking-[0.28em] text-brand-sand/60">
-              Web Solutions
+            <p className="text-xs font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
+              WEB SOLUTIONS
             </p>
           </div>
           <p className="max-w-md text-brand-sand/80">
-            A calm, design-forward web studio crafting modern sites for teams who
-            care how their products feel.
+            A calm, design-forward web studio creating modern, high-performing sites for small businesses in Hackensack, Bergen County, North Jersey, and beyond.
           </p>
           <Link
             href="mailto:hello@smalcoda.studio"
