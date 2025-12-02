@@ -129,6 +129,9 @@ export const metadata: Metadata = {
       "Small code. Big impact. Modern web design and development for thoughtful teams.",
   },
   metadataBase: new URL("https://smalcoda.studio"),
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
