@@ -4,7 +4,8 @@ import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import Button from "@/components/Button";
-import { addOns, services } from "@/data/services";
+import Card from "@/components/Card";
+import { aLaCarteServices, carePlans, services } from "@/data/services";
 import { faqs } from "@/data/faqs";
 import type { Metadata } from "next";
 
@@ -33,23 +34,58 @@ export default function ServicesPage() {
       </Section>
 
       <Section tone="muted">
-        <Container className="space-y-6">
-          <div>
-            <p className="eyebrow">Add-ons</p>
-            <h2 className="section-heading">Extras that move the work faster</h2>
+        <Container className="space-y-12">
+          <div className="space-y-2">
+            <p className="eyebrow">Ongoing Support Services</p>
+            <h2 className="section-heading">Care Plans</h2>
             <p className="text-brand-sand/80">
-              Layer in strategy, copy, and analytics to keep the launch aligned and measurable.
+              Hands-on support to keep your site secure, fast, and evolving with your business.
             </p>
           </div>
+
           <div className="grid gap-4 md:grid-cols-3">
-            {addOns.map((addOn) => (
-              <div
-                key={addOn.title}
-                className="glass h-full rounded-2xl border border-brand-sage/20 bg-brand-moss/60 p-5"
+            {carePlans.map((plan) => (
+              <Card key={plan.title} className="h-full p-5">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-xl font-heading text-brand-sand">{plan.title}</h3>
+                  <span className="text-sm font-medium text-brand-sage">{plan.price}</span>
+                </div>
+                <p className="mt-2 text-sm text-brand-sand/80">{plan.description}</p>
+                <ul className="mt-4 space-y-2 text-sm text-brand-sand/80">
+                  {plan.includes.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
+
+          <div className="space-y-2">
+            <p className="eyebrow">À La Carte</p>
+            <h2 className="section-heading">À La Carte Services</h2>
+            <p className="text-brand-sand/80">
+              Perfect for quick upgrades, smaller needs, or add-ons to any project.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {aLaCarteServices.map((group) => (
+              <Card
+                key={group.title}
+                className="h-full p-5"
               >
-                <h3 className="text-xl font-heading text-brand-sand">{addOn.title}</h3>
-                <p className="mt-2 text-sm text-brand-sand/80">{addOn.description}</p>
-              </div>
+                <h4 className="text-lg font-heading text-brand-sand">{group.title}</h4>
+                <ul className="mt-3 space-y-2 text-sm text-brand-sand/80">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
             ))}
           </div>
         </Container>
