@@ -29,6 +29,85 @@ const inter = Inter({
   display: "swap",
 });
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "SmalCoda Web Solutions",
+  url: "https://smalcoda.studio",
+  description:
+    "SmalCoda Web Solutions builds clean, modern websites for small businesses in Hackensack and Bergen County, offering web design, web development, and Next.js builds.",
+  telephone: "+1-201-903-3584",
+  email: "hello@smalcoda.studio",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hackensack",
+    addressRegion: "NJ",
+    addressCountry: "US",
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Hackensack",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Hackensack",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Bergen County",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "North Jersey",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+    },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
+  ],
+  serviceType: [
+    "Web design",
+    "Web development",
+    "Next.js sites",
+    "Small business websites",
+    "Restaurant websites",
+    "Cafe websites",
+    "Landing pages",
+    "Website refresh",
+    "SEO-optimization",
+  ],
+  sameAs: [
+    "https://www.instagram.com/smalcoda",
+    "https://www.linkedin.com/company/smalcodawebsolutions",
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "SmalCoda Web Solutions | Small code. Big impact.",
@@ -59,6 +138,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
       <body
         className={`${cormorant.variable} ${dmSans.variable} ${inter.variable} bg-brand-night text-brand-sand`}
       >

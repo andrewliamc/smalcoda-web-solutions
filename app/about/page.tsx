@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "SmalCoda Web Solutions is a small, design-forward studio building modern, responsive sites with React and Next.js.",
+    "SmalCoda Web Solutions builds clean, modern websites for small businesses in Hackensack and Bergen County, offering web design, web development, and Next.js builds.",
 };
 
 const values = [
