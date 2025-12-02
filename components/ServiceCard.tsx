@@ -27,8 +27,8 @@ export function ServiceCard({
           <p className="text-sm text-brand-sage/90">{service.who}</p>
           <ul className="space-y-2 text-sm text-brand-sand/80">
             {service.includes.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sage/70" />
+              <li key={item} className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-sage/70" />
                 <span>{item}</span>
               </li>
             ))}
