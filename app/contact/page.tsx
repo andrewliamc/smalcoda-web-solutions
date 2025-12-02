@@ -64,10 +64,10 @@ export default function ContactPage() {
               <p>
                 Reach out at{" "}
                 <a
-                  href="mailto:smalcoda@use.startmail.com"
+                  href="mailto:hello@smalcoda.studio"
                   className="font-semibold text-brand-sage hover:text-brand-sand"
                 >
-                  smalcoda@use.startmail.com
+                  hello@smalcoda.studio
                 </a>
                 . I’ll reply with a short fit check and booking link.
               </p>
