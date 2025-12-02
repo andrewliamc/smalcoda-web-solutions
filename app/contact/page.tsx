@@ -41,7 +41,9 @@ async function handleContact(formData: FormData) {
     }
 
     if (!endpoint) {
-      throw new Error("Contact form is not configured yet. Please try email instead.");
+      throw new Error(
+        "Form is not configured correctly. Please email hello@smalcoda.studio."
+      );
     }
 
     const response = await fetch(endpoint, {
@@ -72,8 +74,6 @@ async function handleContact(formData: FormData) {
       console.error("Formspree submission failed", response.status, errorText);
       throw new Error("Message not sent. Please try again.");
     }
-
-    return redirect("/contact?success=1");
   } catch (error) {
     console.error("Failed to submit contact form", error);
     const message =
@@ -82,6 +82,9 @@ async function handleContact(formData: FormData) {
         : "Message not sent. Please try again.";
     return redirect(`/contact?error=${encodeURIComponent(message)}`);
   }
+
+  // ✅ Important: call redirect *after* the try/catch
+  return redirect("/contact?success=1");
 }
 
 export default function ContactPage({
