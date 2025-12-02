@@ -15,14 +15,11 @@ export function ProcessStep({
 }: ProcessStepProps) {
   return (
     <Card className={cn("h-full space-y-3", className)}>
-      <div className="flex items-start gap-3">
-        <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-sage/10 text-sm font-semibold text-brand-sage">
+      <div className="flex items-center gap-3">
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-sage/10 text-sm font-semibold text-brand-sage">
           {step.title.charAt(0)}
         </span>
-        <div>
-          <p className="eyebrow">{step.id}</p>
-          <h3 className="text-xl font-heading text-brand-sand">{step.title}</h3>
-        </div>
+        <h3 className="eyebrow">{step.id.toUpperCase()}</h3>
       </div>
       <p className="text-brand-sand/80">{step.summary}</p>
       {showDetails && (
