@@ -11,7 +11,7 @@ export const processSteps: ProcessItem[] = [
     id: "discover",
     title: "Discover",
     summary:
-      "Kickoff, interviews, and a lightweight audit to understand goals, audience, and constraints.",
+      "Intake questionnaire to understand goals and constraints followed by a video consultation or in-person one-on-one.",
     clientRole: "Share background, assets, and success metrics. Approve the plan together.",
     deliverables: ["Project brief", "Success metrics", "Roadmap with milestones"],
   },
