@@ -107,11 +107,6 @@ export default function ContactPage({
 
       <Section>
         <Container className="space-y-6">
-          {successMessage && (
-            <div className="rounded-xl border border-green-500/40 bg-green-500/10 p-4 text-sm font-semibold text-green-100">
-              {successMessage}
-            </div>
-          )}
           {errorMessage && (
             <div className="rounded-xl border border-red-500/40 bg-red-500/10 p-4 text-sm font-semibold text-red-100">
               {errorMessage}
@@ -153,7 +148,7 @@ export default function ContactPage({
               </div>
             </div>
 
-            <ContactForm action={handleContact} />
+            <ContactForm action={handleContact} successMessage={successMessage} />
           </div>
         </Container>
       </Section>
