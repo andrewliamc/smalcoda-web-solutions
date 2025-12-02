@@ -1,5 +1,6 @@
 type ContactFormProps = {
   action: (formData: FormData) => Promise<void>;
+  successMessage?: string;
 };
 
 const budgetOptions = [
@@ -19,9 +20,14 @@ const projectTypes = [
   "Other",
 ];
 
-export function ContactForm({ action }: ContactFormProps) {
+export function ContactForm({ action, successMessage }: ContactFormProps) {
   return (
     <form action={action} className="glass space-y-5 rounded-2xl p-6 md:p-8">
+      {successMessage ? (
+        <div className="rounded-xl border border-brand-sage/50 bg-brand-sage/15 px-4 py-3 text-sm font-semibold text-brand-sage">
+          Message sent! Thank you — I’ll get back to you within 1–2 business days.
+        </div>
+      ) : null}
       <div className="grid gap-4 md:grid-cols-2">
         <label className="space-y-2">
           <span className="text-sm text-brand-sand/90">Name</span>
