@@ -22,6 +22,8 @@ export interface CaseStudy {
   role: string;
   location?: string;
   liveUrl?: string;
+  snapshotTitle?: string;
+  snapshotDescription?: string;
   summary: string;
   tags: string[];
   tech: string[];
@@ -35,6 +37,9 @@ export const caseStudies: CaseStudy[] = [
     category: "Ecommerce",
     role: "Brand, UI/UX, Frontend Development",
     liveUrl: "https://willow-and-pine.vercel.app",
+    snapshotTitle: "A warm, story-driven ecommerce experience built around ritual, craft, and sensory exploration.",
+    snapshotDescription:
+      "A fully custom Next.js + headless CMS storefront featuring tasting notes, brewing rituals, and a calm, guided shopping flow.",
     summary:
       "Boutique ecommerce experience for a small-batch tea brand, blending sensory storytelling, tasting notes, and calm, high-end UI.",
     tags: ["Ecommerce", "Branding", "UX/UI"],
@@ -90,6 +95,9 @@ export const caseStudies: CaseStudy[] = [
     category: "Portfolio",
     role: "Brand, UX, Frontend Development",
     liveUrl: "https://ember-and-loom.vercel.app",
+    snapshotTitle: "Cinematic portfolio with full-bleed imagery and modular case studies.",
+    snapshotDescription:
+      "Built with Next.js + Sanity, this CMS-driven editorial layout blends flexible case-study structures, full-bleed galleries, and soft motion to elevate creative work.",
     summary:
       "Editorial-style portfolio for a photography and art direction studio, built for large imagery, flexible case studies, and CMS editing.",
     tags: ["Portfolio", "Branding", "UX/UI"],
@@ -145,6 +153,9 @@ export const caseStudies: CaseStudy[] = [
     category: "SaaS",
     role: "Product Marketing, UX, Frontend Development",
     liveUrl: "https://harvesthub.vercel.app",
+    snapshotTitle: "A clean, wellness-focused SaaS experience crafted for clarity, trust, and conversions.",
+    snapshotDescription:
+      "A marketing layer built in Next.js featuring scannable value props, pricing tiers, UI previews, and mobile-first optimization for founders ready to launch.",
     summary:
       "Conversion-focused marketing site for a fictional meal-planning SaaS, with clear value props, pricing, and product storytelling.",
     tags: ["SaaS", "Product Marketing", "Landing Page"],

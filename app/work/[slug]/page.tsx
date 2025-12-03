@@ -133,13 +133,14 @@ export default async function CaseStudyPage({ params }: Props) {
                   Project snapshot
                 </p>
                 <h3 className="text-2xl font-heading text-brand-sand">
-                  Calm, tactile UI with conversion paths built in.
+                  {study.snapshotTitle ?? "Calm, tactile UI with conversion paths built in."}
                 </h3>
                 <p className="text-sm text-brand-sand/70">
-                  Placeholder space for hero visuals and key UI moments.
+                  {study.snapshotDescription ??
+                    "Placeholder space for hero visuals and key UI moments."}
                 </p>
               </div>
-              <Button href="/contact" variant="ghost">
+              <Button href="/contact" variant="ghost" className="whitespace-nowrap">
                 Book this style
               </Button>
             </div>
