@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
-import { projects } from "@/data/projects";
+import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -25,8 +25,16 @@ export default function WorkPage() {
       <Section>
         <Container>
           <div className="grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+            {caseStudies.map((study) => (
+              <ProjectCard
+                key={study.slug}
+                title={study.title}
+                category={study.category}
+                description={study.summary}
+                tags={study.tags}
+                tech={study.tech}
+                href={`/work/${study.slug}`}
+              />
             ))}
           </div>
         </Container>

@@ -7,10 +7,15 @@ import ServiceCard from "@/components/ServiceCard";
 import Testimonial from "@/components/Testimonial";
 import { services } from "@/data/services";
 import { processSteps } from "@/data/processSteps";
-import { projects } from "@/data/projects";
+import { caseStudies } from "@/lib/caseStudies";
 
 const serviceSnapshot = services.slice(0, 3);
-const featuredProject = projects.find((project) => project.featured) ?? projects[0];
+const featuredCaseStudy =
+  caseStudies.find((study) => study.slug === "willow-and-pine") ?? caseStudies[0];
+const featuredBadges = [
+  featuredCaseStudy.category,
+  ...featuredCaseStudy.tech,
+];
 
 export default function HomePage() {
   return (
@@ -86,10 +91,13 @@ export default function HomePage() {
         <Container className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div className="space-y-4">
             <p className="eyebrow">Featured project</p>
-            <h2 className="section-heading">{featuredProject.title}</h2>
-            <p className="text-brand-sand/80">{featuredProject.description}</p>
+            <h2 className="section-heading">{featuredCaseStudy.title}</h2>
+            <p className="text-brand-sand/80">
+              Brand-forward ecommerce experience with sensory storytelling, tasting notes,
+              and a calm, high-end shopping flow.
+            </p>
             <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
-              {featuredProject.stack.map((tech) => (
+              {featuredBadges.map((tech) => (
                 <span
                   key={tech}
                   className="rounded-full border border-brand-sage/30 px-3 py-1"
@@ -99,7 +107,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="flex gap-3">
-              <Button href={`/work/${featuredProject.slug}`}>View case study</Button>
+              <Button href={`/work/${featuredCaseStudy.slug}`}>View case study</Button>
               <Button href="/work" variant="ghost">
                 See all work
               </Button>
