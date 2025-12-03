@@ -8,6 +8,8 @@ type ButtonProps = {
   children: ReactNode;
   className?: string;
   ariaLabel?: string;
+  target?: string;
+  rel?: string;
 };
 
 const variantStyles: Record<NonNullable<ButtonProps["variant"]>, string> = {
@@ -25,6 +27,8 @@ export function Button({
   children,
   className,
   ariaLabel,
+  target,
+  rel,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sage/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-night",
@@ -34,7 +38,13 @@ export function Button({
 
   if (href) {
     return (
-      <Link className={classes} href={href} aria-label={ariaLabel}>
+      <Link
+        className={classes}
+        href={href}
+        aria-label={ariaLabel}
+        target={target}
+        rel={rel}
+      >
         {children}
       </Link>
     );

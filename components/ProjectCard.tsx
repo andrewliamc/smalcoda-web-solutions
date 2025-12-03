@@ -40,7 +40,7 @@ export function ProjectCard({
           </span>
         ))}
       </div>
-      <div className="mt-auto flex items-center justify-between pt-2">
+      <div className="mt-auto flex flex-col gap-3 pt-2 md:flex-row md:items-center md:justify-between md:gap-0">
         <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
           {tech.map((item) => (
             <span key={item} className="rounded bg-brand-moss/60 px-2 py-1">

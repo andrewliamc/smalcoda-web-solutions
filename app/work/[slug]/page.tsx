@@ -103,6 +103,8 @@ export default async function CaseStudyPage({ params }: Props) {
                   href={study.liveUrl}
                   variant="primary"
                   className="whitespace-nowrap"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   View live site
                 </Button>
