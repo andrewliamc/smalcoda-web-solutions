@@ -132,7 +132,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://smalcoda.studio"),
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 };
 
