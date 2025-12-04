@@ -105,6 +105,8 @@ const schemaData = {
   sameAs: [
     "https://www.instagram.com/smalcoda",
     "https://www.linkedin.com/company/smalcodawebsolutions",
+    "https://www.facebook.com/smalcodawebsolutions",
+    "https://www.youtube.com/@smalcodawebsolutions",
   ],
 };
 
