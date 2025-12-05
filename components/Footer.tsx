@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Container from "./Container";
 
-const navItems = [
-  { href: "/", label: "Home" },
+const navigation = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
   { href: "/process", label: "Process" },
@@ -10,56 +9,100 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+const connect = [
+  { href: "mailto:hello@smalcoda.studio", label: "Email", external: true, newTab: false },
+  { href: "https://www.instagram.com/smalcoda/", label: "Instagram", external: true, newTab: true },
+  {
+    href: "https://www.linkedin.com/company/smalcodawebsolutions",
+    label: "LinkedIn",
+    external: true,
+    newTab: true,
+  },
+];
+
+const resources = [
+  { href: "/terms-of-use", label: "Terms of Use" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/cookie-policy", label: "Cookie Policy" },
+  { href: "/accessibility", label: "Accessibility" },
+  { href: "/legal", label: "Legal Notice" },
+];
+
+const linkClass =
+  "text-sm text-brand-sand/80 opacity-90 transition hover:text-brand-sand hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sage/60";
+
 export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-brand-moss/40">
-      <Container className="flex flex-col gap-8 py-10 md:flex-row md:items-start md:justify-between">
-        <div className="space-y-3">
-          <div>
-            <p className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand">
-              SMALCODA
-            </p>
-            <p className="text-xs font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
-              WEB SOLUTIONS
-            </p>
-          </div>
-          <p className="max-w-md text-brand-sand/80">
-            A calm, design-forward web studio creating modern, high-performing sites for small businesses in Hackensack, Bergen County, North Jersey, and beyond.
-          </p>
-          <Link
-            href="mailto:hello@smalcoda.studio"
-            className="text-sm font-medium text-brand-sage hover:text-brand-sand"
-          >
-            hello@smalcoda.studio
-          </Link>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 md:gap-10">
-          <div className="space-y-2">
-            <p className="text-sm font-medium text-brand-sage">Navigate</p>
-            <div className="flex flex-col gap-2 text-sm text-brand-sand/80">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="hover:text-brand-sage"
-                >
-                  {item.label}
-                </Link>
-              ))}
+      <Container className="py-12">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-sm space-y-4">
+            <div>
+              <p className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand">
+                SMALCODA
+              </p>
+              <p className="text-xs font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
+                WEB SOLUTIONS
+              </p>
             </div>
+            <p className="text-sm leading-relaxed text-brand-sand/80">
+              A calm, design-forward web studio creating modern, high-performing sites for small businesses in Hackensack, Bergen County, North Jersey, and beyond.
+            </p>
+            <Link href="mailto:hello@smalcoda.studio" className={linkClass}>
+              hello@smalcoda.studio
+            </Link>
           </div>
-          <div className="space-y-2">
-            <p className="text-sm font-medium text-brand-sage">Connect</p>
-            <div className="flex flex-col gap-2 text-sm text-brand-sand/80">
-              <Link href="/contact" className="hover:text-brand-sage">
-                Start a project
-              </Link>
-              <Link href="/work" className="hover:text-brand-sage">
-                View the work
-              </Link>
-              <Link href="/resources" className="hover:text-brand-sage">
-                Resources (soon)
-              </Link>
+
+          <div className="grid flex-1 gap-8 border-t border-white/5 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:border-t-0 lg:pt-0">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-sage">
+                Navigation
+              </p>
+              <div className="flex flex-col gap-2">
+                {navigation.map((item) => (
+                  <Link key={item.href} href={item.href} className={linkClass}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-sage">
+                Connect
+              </p>
+              <div className="flex flex-col gap-2">
+                {connect.map((item) =>
+                  item.external ? (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target={item.newTab === false ? undefined : "_blank"}
+                      rel="noreferrer noopener"
+                      className={linkClass}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link key={item.href} href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-sage">
+                Resources
+              </p>
+              <div className="flex flex-col gap-2">
+                {resources.map((item) => (
+                  <Link key={item.href} href={item.href} className={linkClass}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
