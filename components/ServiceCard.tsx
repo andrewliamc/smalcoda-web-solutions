@@ -36,10 +36,14 @@ export function ServiceCard({
         </div>
       )}
 
-      <div className="mt-auto flex items-center justify-between text-sm text-brand-sand/80">
-        <span>{service.timeline}</span>
-        <span className="font-medium text-brand-sage">{service.price}</span>
-      </div>
+      {!compact ? (
+        <div className="mt-auto flex items-center justify-between text-sm text-brand-sand/80">
+          <span>{service.timeline}</span>
+          <span className="font-medium text-brand-sage">{service.price}</span>
+        </div>
+      ) : (
+        <div className="mt-auto text-sm text-brand-sand/80">{service.timeline}</div>
+      )}
 
       {!compact && (
         <div className="pt-2">
