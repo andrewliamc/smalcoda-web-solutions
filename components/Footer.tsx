@@ -37,14 +37,17 @@ export function Footer() {
       <Container className="py-12">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm space-y-4">
-            <div>
+            <Link
+              href="/"
+              className="group inline-flex flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sage/60"
+            >
               <p className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand">
                 SMALCODA
               </p>
               <p className="text-xs font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
                 WEB SOLUTIONS
               </p>
-            </div>
+            </Link>
             <p className="text-sm leading-relaxed text-brand-sand/80">
               A calm, design-forward web studio creating modern, high-performing sites for small businesses in Hackensack, Bergen County, North Jersey, and beyond.
             </p>
