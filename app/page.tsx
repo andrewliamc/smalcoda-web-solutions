@@ -4,7 +4,6 @@ import CTASection from "@/components/CTASection";
 import ProcessStep from "@/components/ProcessStep";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
-import Testimonial from "@/components/Testimonial";
 import { services } from "@/data/services";
 import { processSteps } from "@/data/processSteps";
 import { caseStudies } from "@/lib/caseStudies";
@@ -149,36 +148,30 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section tone="muted">
-        <Container className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-start">
-          <div className="space-y-4">
-            <p className="eyebrow">Working together</p>
-            <h2 className="section-heading">Why clients keep coming back</h2>
-            <ul className="space-y-3 text-brand-sand/80">
-              {[
-                "Clear, friendly communication with no jargon walls.",
-                "Thoughtful, user-first design that respects attention.",
-                "Clean, maintainable code that’s easy to build on.",
-                "Reliable timelines with expectations set up front.",
-              ].map((point) => (
-                <li key={point} className="flex gap-3">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-brand-sage/80" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <Testimonial
-              quote="We shipped a launch-ready site in a month. The process was calm, clear, and the build quality is stellar."
-              name="Maya Chen"
-              role="Head of Product Marketing"
-            />
-            <Testimonial
-              quote="Design, dev, and QA in one partner. The site feels premium and is easy for our team to update."
-              name="Luis Ortega"
-              role="Founder, Lumen Studio"
-            />
+      <Section className="relative overflow-hidden bg-brand-night">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/working-together.jpg')] bg-cover bg-center opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-night/90 via-brand-moss/80 to-brand-night/92" />
+        </div>
+        <Container className="relative">
+          <div className="mx-auto max-w-4xl glass rounded-3xl border border-brand-sage/20 bg-brand-moss/55 px-6 py-10 shadow-soft md:px-10 md:py-14">
+            <div className="space-y-4">
+              <p className="eyebrow text-left">Working together</p>
+              <h2 className="section-heading text-left">Why should you choose SmalCoda?</h2>
+              <ul className="space-y-3 text-left text-brand-sand/80">
+                {[
+                  "Clear, friendly communication with no jargon walls.",
+                  "Thoughtful, user-first design that respects attention.",
+                  "Clean, maintainable code that’s easy to build on.",
+                  "Reliable timelines with expectations set up front.",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-brand-sage/80" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </Section>
