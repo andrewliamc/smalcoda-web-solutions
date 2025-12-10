@@ -159,6 +159,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Jacksonville Pottery Studio",
     category: "Studio Website Redesign",
     role: "Brand UX, Frontend Development",
+    liveUrl: "https://jax-pottery-studio.vercel.app",
     snapshotTitle:
       "A modern, community-centered website for a Jacksonville pottery studio, designed to simplify booking, highlight memberships, and tell a more welcoming story around classes, events, and open studio time.",
     snapshotDescription:
