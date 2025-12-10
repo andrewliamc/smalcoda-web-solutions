@@ -46,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
       "A fully custom Next.js + headless CMS storefront featuring tasting notes, brewing rituals, and a calm, guided shopping flow.",
     summary:
       "Boutique ecommerce experience for a small-batch tea brand, blending sensory storytelling, tasting notes, and calm, high-end UI.",
-    tags: ["Ecommerce", "Branding", "UX/UI"],
+    tags: ["Ecommerce", "Branding"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Headless CMS"],
     sections: [
       {
@@ -95,8 +95,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "ember-and-loom",
-    title: "Houston’s – Bergen County Restaurant Redesign",
-    category: "Restaurant website redesign for a beloved Bergen County staple",
+    title: "Houston’s – Restaurant Redesign",
+    category: "Redesign",
     role: "Brand UX, Frontend Development",
     liveUrl: "https://houstons-redesign.vercel.app/",
     snapshotTitle: "From PDF menus to a modern, mobile-first restaurant experience",
@@ -171,11 +171,8 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "A warm, conversion-focused website for a community pottery studio in Jacksonville, Florida, clarifying classes, memberships, and events while making booking effortless.",
     tags: [
-      "Brand UX",
       "Frontend Development",
       "Next.js",
-      "Tailwind CSS",
-      "Booking UX",
       "Local SEO",
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Local SEO"],
