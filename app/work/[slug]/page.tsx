@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!study) return { title: "Case study not found" };
 
   return {
-    title: `${study.title} | Case Study`,
-    description: study.summary,
+    title: study.metaTitle ?? `${study.title} | Case Study`,
+    description: study.metaDescription ?? study.summary,
   };
 }
 
@@ -33,6 +34,28 @@ function ImagePlaceholder({ label }: { label: string }) {
   return (
     <div className="mt-6 flex aspect-[16/9] items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm text-brand-sand/70">
       {label}
+    </div>
+  );
+}
+
+function CaseStudyImage({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}) {
+  return (
+    <div className="mt-6 relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1280px) 1200px, (min-width: 1024px) 1000px, (min-width: 768px) 800px, 100vw"
+        className="object-cover"
+        quality={100}
+        priority
+      />
     </div>
   );
 }
@@ -153,7 +176,9 @@ export default async function CaseStudyPage({ params }: Props) {
               <div key={section.id} className="space-y-3">
                 <h2 className="section-heading">{section.title}</h2>
                 <p className="text-brand-sand/80">{section.body}</p>
-                {section.hasImagePlaceholder && section.imagePlaceholderLabel ? (
+                {section.imageSrc ? (
+                  <CaseStudyImage src={section.imageSrc} alt={section.imageAlt ?? section.title} />
+                ) : section.hasImagePlaceholder && section.imagePlaceholderLabel ? (
                   <ImagePlaceholder label={section.imagePlaceholderLabel} />
                 ) : null}
               </div>

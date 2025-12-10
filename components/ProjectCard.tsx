@@ -23,9 +23,9 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Card className={cn("flex h-full flex-col gap-4", className)}>
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-start justify-between gap-3">
         <h3 className="text-2xl font-heading text-brand-sand">{title}</h3>
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-brand-sage">
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-brand-sage md:self-start">
           {category}
         </span>
       </div>
