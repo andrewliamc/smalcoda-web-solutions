@@ -152,7 +152,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <Container className="space-y-10">
           <div className="glass relative overflow-hidden rounded-3xl border border-brand-sage/20 bg-gradient-to-br from-brand-moss/70 via-brand-night to-brand-night shadow-card">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(159,189,170,0.35),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(194,169,138,0.25),transparent_30%)]" />
-            <div className="relative flex flex-col justify-between gap-4 p-6 md:flex-row md:items-center">
+            <div className="relative flex flex-col gap-4 p-6 md:items-start">
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.24em] text-brand-sage/70">
                   Project snapshot
@@ -165,7 +165,11 @@ export default async function CaseStudyPage({ params }: Props) {
                     "Placeholder space for hero visuals and key UI moments."}
                 </p>
               </div>
-              <Button href="/contact" variant="ghost" className="whitespace-nowrap">
+              <Button
+                href="/contact"
+                variant="ghost"
+                className="whitespace-nowrap self-start"
+              >
                 Book this style
               </Button>
             </div>

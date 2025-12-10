@@ -155,6 +155,75 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    slug: "jacksonville-pottery-studio",
+    title: "Jacksonville Pottery Studio",
+    category: "Studio Website Redesign",
+    role: "Brand UX, Frontend Development",
+    snapshotTitle:
+      "A modern, community-centered website for a Jacksonville pottery studio, designed to simplify booking, highlight memberships, and tell a more welcoming story around classes, events, and open studio time.",
+    snapshotDescription:
+      "Warm, tactile storytelling paired with clear paths into classes, memberships, events, and studio information—built to make booking effortless.",
+    metaTitle:
+      "Jacksonville Pottery Studio – Community Pottery Studio Website Redesign | SmalCoda Web Solutions",
+    metaDescription:
+      "A warm, conversion-focused website redesign for Jacksonville Pottery Studio, clarifying classes, memberships, events, and bookings for a growing community pottery studio.",
+    summary:
+      "A warm, conversion-focused website for a community pottery studio in Jacksonville, Florida, clarifying classes, memberships, and events while making booking effortless.",
+    tags: [
+      "Brand UX",
+      "Frontend Development",
+      "Next.js",
+      "Tailwind CSS",
+      "Booking UX",
+      "Local SEO",
+    ],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Local SEO"],
+    sections: [
+      {
+        id: "overview",
+        title: "Overview",
+        body:
+          "Jacksonville Pottery Studio is a community pottery studio offering wheel-throwing classes, hand-building courses, memberships, and private events. Their original Squarespace site had grown organically over time and relied heavily on long pages, PDFs, and scattered booking links. The goal of the redesign was to create a calm, welcoming site that clearly explains the studio’s offerings, makes booking a class feel effortless, and better supports ongoing membership growth.",
+      },
+      {
+        id: "challenge",
+        title: "Challenge",
+        body:
+          "The existing site did its job, but it made visitors work too hard. Class descriptions and policies were spread across multiple pages, open studio information was hard to compare at a glance, and key actions—like booking a Sip & Spin class or becoming a member—weren’t consistently highlighted. Heavy text blocks, PDF-style content, and a lack of clear hierarchy made it difficult for new visitors to quickly understand where to start. Our challenge was to restructure the information architecture around the real journeys people take: trying a class for the first time, signing up for a five-week course, becoming a member, or planning a private event. All of that needed to fit within a visual style that felt warm, handcrafted, and easy to navigate on mobile.",
+      },
+      {
+        id: "approach",
+        title: "Approach",
+        body:
+          "We started by mapping out the studio’s core offerings and grouping them into clear paths: Classes, Membership, Events, and Studio Info. Instead of separate, disconnected pages, we designed a streamlined primary navigation and a single, cohesive story on the homepage. On the content side, we rewrote the class descriptions and membership details into concise, scannable summaries, with supporting detail just one click away. Calls to action are now consistent across the site—“Book a Class,” “View Membership Details,” or “Request a Date”—so visitors always know what to do next. The brand language leans into warmth and community without losing clarity: headlines invite visitors to “Make Something Beautiful” while the supporting copy stays practical about pricing, session length, and experience levels.",
+        hasImagePlaceholder: true,
+        imagePlaceholderLabel: "Homepage hero + class and membership highlights",
+      },
+      {
+        id: "ux",
+        title: "UX & UI Design",
+        body:
+          "The new homepage introduces Jacksonville Pottery Studio with a full-width hero that pairs a soft, neutral color palette with close-up pottery imagery. A primary call to action drives visitors to book a class, while a secondary CTA offers a path into memberships for more experienced makers. Below the hero, we break the experience into approachable sections: Explore Our Classes—card-based layouts for Sip & Spin nights, five-week courses, workshops, and kids classes with price ranges, experience level, and a clear “View Classes” button; Memberships Made for Makers—a simple explanation of benefits paired with a callout for new potters to start with a beginner class; Private Events & Parties—three cards for birthday parties, team building, and bachelorette or girls’ nights with a “Request a Date” CTA; Meet the Team—a friendly introduction linking to bios for management, assistants, and instructors; Newsletter—an email capture inviting visitors to “Stay in the Clay.” Across the site, we used soft neutrals, terracotta accents, and rounded cards to echo clay, glaze, and the tactile feel of the studio. Typesetting is calm and readable, with a consistent vertical rhythm that keeps long-form content easy to skim.",
+        hasImagePlaceholder: true,
+        imagePlaceholderLabel: "Feature grid: classes, memberships, events, team",
+      },
+      {
+        id: "engineering",
+        title: "Engineering",
+        body:
+          "Under the hood, the site is built with Next.js and the App Router, styled with Tailwind CSS, and composed from a small set of reusable components. Hero sections, feature grids, and card layouts are all driven by shared building blocks, making it easy to introduce new classes, events, or membership tiers without redesigning the page. Server components handle static content and layout, while lightweight client components are used where interaction is needed—such as navigation, call-to-action buttons, and any future filtering of classes or events. The design is fully responsive, with mobile-first spacing and tap-friendly targets so booking a class on a phone feels just as smooth as on desktop. SEO-friendly page titles, descriptions, and semantic headings support local discovery around pottery classes in Jacksonville, Sip & Spin nights, and pottery memberships. Content is structured so the studio can grow into more events and workshops without needing a full rebuild.",
+        hasImagePlaceholder: true,
+        imagePlaceholderLabel: "Responsive layouts + component map",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body:
+          "The result is a modern, conversion-focused studio website that feels as warm and welcoming as the space itself. Visitors can quickly understand what Jacksonville Pottery Studio offers, choose the right path—whether that’s a one-night Sip & Spin, a five-week beginner course, or a full membership—and complete their booking with confidence. For the studio, the new structure turns their site into a clear growth engine: fewer confused inquiries, more qualified bookings, and a stronger foundation for promoting special workshops, kids classes, and private events over time.",
+      },
+    ],
+  },
+  {
     slug: "harvesthub",
     title: "HarvestHub Meal Planner",
     category: "SaaS",
