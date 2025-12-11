@@ -9,6 +9,7 @@ export interface ProjectCardProps {
   tags: string[];
   tech: string[];
   href: string;
+  liveUrl?: string;
   className?: string;
 }
 
@@ -19,51 +20,56 @@ export function ProjectCard({
   tags,
   tech,
   href,
+  liveUrl,
   className,
 }: ProjectCardProps) {
   return (
-    <Link
-      href={href}
-      className="group block h-full focus-visible:outline-none"
-      aria-label={`View case study for ${title}`}
-    >
-      <Card
-        className={cn(
-          "flex h-full flex-col gap-4 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-card focus-visible:-translate-y-1 focus-visible:shadow-card group-focus-visible:ring-2 group-focus-visible:ring-brand-sage/40 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-brand-night",
-          className,
-        )}
-      >
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="text-2xl font-heading text-brand-sand">{title}</h3>
-          <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-brand-sage md:self-start">
-            {category}
+    <Card className={cn("flex h-full flex-col gap-4", className)}>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-2xl font-heading text-brand-sand">{title}</h3>
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-brand-sage md:self-start">
+          {category}
+        </span>
+      </div>
+      <p className="text-brand-sand/80">{description}</p>
+      <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
+        {tags.map((tag) => (
+          <span key={tag} className="rounded-full border border-brand-sage/30 px-3 py-1">
+            {tag}
           </span>
-        </div>
-        <p className="text-brand-sand/80">{description}</p>
+        ))}
+      </div>
+      <div className="mt-auto flex flex-col gap-3 pt-2">
         <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
-          {tags.map((tag) => (
+          {tech.map((item) => (
             <span
-              key={tag}
-              className="rounded-full border border-brand-sage/30 px-3 py-1"
+              key={item}
+              className="rounded-md border border-white/5 bg-brand-night/60 px-3 py-1 text-brand-sand/80"
             >
-              {tag}
+              {item}
             </span>
           ))}
         </div>
-        <div className="mt-auto flex flex-col gap-3 pt-2 md:flex-row md:items-center md:justify-between md:gap-0">
-          <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
-            {tech.map((item) => (
-              <span key={item} className="rounded bg-brand-moss/60 px-2 py-1">
-                {item}
-              </span>
-            ))}
-          </div>
-          <span className="whitespace-nowrap text-sm font-medium text-brand-sage transition group-hover:text-brand-sand group-focus-visible:text-brand-sand">
-            View case study →
-          </span>
-        </div>
-      </Card>
-    </Link>
+        <Link
+          href={href}
+          className="inline-flex items-center whitespace-nowrap text-sm font-medium text-brand-sage transition hover:text-brand-sand focus-visible:text-brand-sand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sage/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-night"
+          aria-label={`View case study for ${title}`}
+        >
+          View case study →
+        </Link>
+        {liveUrl ? (
+          <Link
+            href={liveUrl}
+            className="inline-flex items-center whitespace-nowrap text-sm font-medium text-brand-sage transition hover:text-brand-sand focus-visible:text-brand-sand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sage/40 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-night"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`View live site for ${title}`}
+          >
+            View live site →
+          </Link>
+        ) : null}
+      </div>
+    </Card>
   );
 }
 

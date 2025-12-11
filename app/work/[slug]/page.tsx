@@ -100,20 +100,17 @@ export default async function CaseStudyPage({ params }: Props) {
                 {study.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-brand-sage/30 px-3 py-1"
+                    className="rounded bg-brand-moss/60 px-3 py-1 text-brand-sand/80"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
               <div className="flex flex-wrap gap-3 text-sm text-brand-sage">
-                <span className="rounded-full bg-brand-moss/60 px-3 py-1">
-                  {study.role}
-                </span>
                 {study.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full bg-brand-night/60 px-3 py-1 text-brand-sand/80"
+                    className="rounded-md border border-white/5 bg-brand-night/60 px-3 py-1 text-brand-sand/80"
                   >
                     {tech}
                   </span>

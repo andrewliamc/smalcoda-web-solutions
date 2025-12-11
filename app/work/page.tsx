@@ -33,6 +33,7 @@ export default function WorkPage() {
                 description={study.summary}
                 tags={study.tags}
                 tech={study.tech}
+                liveUrl={study.liveUrl}
                 href={`/work/${study.slug}`}
               />
             ))}

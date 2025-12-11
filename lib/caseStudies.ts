@@ -21,7 +21,6 @@ export interface CaseStudy {
   slug: string;
   title: string;
   category: string;
-  role: string;
   location?: string;
   liveUrl?: string;
   snapshotTitle?: string;
@@ -36,18 +35,17 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "willow-and-pine",
+    slug: "willow-and-pine-tea-co",
     title: "Willow & Pine Tea Co.",
     category: "Ecommerce",
-    role: "Brand, UI/UX, Frontend Development",
     liveUrl: "https://willow-and-pine.vercel.app",
     snapshotTitle: "A warm, story-driven ecommerce experience built around ritual, craft, and sensory exploration.",
     snapshotDescription:
       "A fully custom Next.js + headless CMS storefront featuring tasting notes, brewing rituals, and a calm, guided shopping flow.",
     summary:
       "Boutique ecommerce experience for a small-batch tea brand, blending sensory storytelling, tasting notes, and calm, high-end UI.",
-    tags: ["Ecommerce", "Branding"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Headless CMS"],
+    tags: [],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Headless CMS", "Ecommerce", "Branding"],
     sections: [
       {
         id: "overview",
@@ -94,10 +92,9 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: "ember-and-loom",
+    slug: "houstons-restaurant-redesign",
     title: "Houston’s – Restaurant Redesign",
     category: "Redesign",
-    role: "Brand UX, Frontend Development",
     liveUrl: "https://houstons-redesign.vercel.app/",
     snapshotTitle: "From PDF menus to a modern, mobile-first restaurant experience",
     snapshotDescription:
@@ -107,8 +104,8 @@ export const caseStudies: CaseStudy[] = [
       "See how SmalCoda Web Solutions redesigned Houston’s Bergen County restaurant website with mobile-first menus, streamlined reservations, and a modern, high-conversion UX for local diners.",
     summary:
       "A modern, conversion-focused website for Houston’s in Bergen County, replacing PDF menus with a mobile-first menu experience, clear reservations, and improved local SEO.",
-    tags: ["Brand UX", "Frontend Development", "Next.js", "Tailwind CSS", "Restaurant", "Local SEO"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tags: [],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Brand UX", "SEO"],
     sections: [
       {
         id: "overview",
@@ -158,7 +155,6 @@ export const caseStudies: CaseStudy[] = [
     slug: "jacksonville-pottery-studio",
     title: "Jacksonville Pottery Studio",
     category: "Studio Website Redesign",
-    role: "Brand UX, Frontend Development",
     liveUrl: "https://jax-pottery-studio.vercel.app",
     snapshotTitle:
       "A modern, community-centered website for a Jacksonville pottery studio, designed to simplify booking, highlight memberships, and tell a more welcoming story around classes, events, and open studio time.",
@@ -170,12 +166,8 @@ export const caseStudies: CaseStudy[] = [
       "A warm, conversion-focused website redesign for Jacksonville Pottery Studio, clarifying classes, memberships, events, and bookings for a growing community pottery studio.",
     summary:
       "A warm, conversion-focused website for a community pottery studio in Jacksonville, Florida, clarifying classes, memberships, and events while making booking effortless.",
-    tags: [
-      "Frontend Development",
-      "Next.js",
-      "Local SEO",
-    ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Local SEO"],
+    tags: [],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "SEO"],
     sections: [
       {
         id: "overview",
@@ -222,18 +214,17 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: "harvesthub",
+    slug: "harvesthub-meal-planner",
     title: "HarvestHub Meal Planner",
     category: "SaaS",
-    role: "Product Marketing, UX, Frontend Development",
     liveUrl: "https://harvesthub.vercel.app",
     snapshotTitle: "A clean, wellness-focused SaaS experience crafted for clarity, trust, and conversions.",
     snapshotDescription:
       "A marketing layer built in Next.js featuring scannable value props, pricing tiers, UI previews, and mobile-first optimization for founders ready to launch.",
     summary:
       "Conversion-focused marketing site for a fictional meal-planning SaaS, with clear value props, pricing, and product storytelling.",
-    tags: ["SaaS", "Product Marketing", "Landing Page"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tags: [],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "SaaS", "Product Marketing", "Landing Page"],
     sections: [
       {
         id: "overview",

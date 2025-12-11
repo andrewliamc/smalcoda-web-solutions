@@ -41,12 +41,12 @@ export function Footer() {
               href="/"
               className="group inline-flex flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sage/60"
             >
-              <p className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand">
+              <span className="text-lg font-sans font-black uppercase tracking-[0.19em] text-brand-sand group-hover:text-brand-sage">
                 SMALCODA
-              </p>
-              <p className="text-xs font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
+              </span>
+              <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.28em] text-brand-sand/60">
                 WEB SOLUTIONS
-              </p>
+              </span>
             </Link>
             <p className="text-sm leading-relaxed text-brand-sand/80">
               A calm, design-forward web studio creating modern, high-performing sites for small businesses in Hackensack, Bergen County, North Jersey, and beyond.

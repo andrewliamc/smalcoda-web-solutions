@@ -8,7 +8,6 @@ import Container from "./Container";
 import Button from "./Button";
 
 const navItems = [
-  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
   { href: "/process", label: "Process" },
@@ -30,10 +29,10 @@ export function Header() {
       <Container className="flex items-center justify-between py-4">
         <Link href="/" className="group flex items-center gap-3">
           <div className="flex flex-col leading-tight">
-            <span className="text-lg font-sans font-black uppercase tracking-[0.12em] text-brand-sand group-hover:text-brand-sage">
+            <span className="text-lg font-sans font-black uppercase tracking-[0.19em] text-brand-sand group-hover:text-brand-sage">
               SMALCODA
             </span>
-            <span className="text-[11px] font-sans font-thin uppercase tracking-[0.28em] text-brand-sand/60">
+            <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.28em] text-brand-sand/60">
               WEB SOLUTIONS
             </span>
           </div>

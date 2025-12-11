@@ -35,7 +35,7 @@ export const services: Service[] = [
       "Basic on-page SEO (titles, meta, alt text)",
       "Contact form and basic analytics setup",
     ],
-    timeline: "1.5–3 weeks",
+    timeline: "2.5–4 weeks",
     price: "Starting at $2,500",
   },
   {
@@ -51,7 +51,7 @@ export const services: Service[] = [
       "Accessible, performant front-end build",
       "On-page SEO and event tracking for key actions",
     ],
-    timeline: "3–5 weeks",
+    timeline: "4–6 weeks",
     price: "Starting at $5,000",
   },
   {
@@ -66,7 +66,7 @@ export const services: Service[] = [
       "Accessible, performant front-end build",
       "Basic on-page SEO and analytics setup",
     ],
-    timeline: "4–6+ weeks",
+    timeline: "5–7+ weeks",
     price: "Starting at $7,500+",
   },
   {
@@ -81,7 +81,7 @@ export const services: Service[] = [
       "Analytics and event tracking hookups",
       "Hand-off notes for ongoing marketing",
     ],
-    timeline: "1–2 weeks",
+    timeline: "2–3 weeks",
     price: "Starting at $2,000",
   },
   {
@@ -96,7 +96,7 @@ export const services: Service[] = [
       "Performance and accessibility tuning",
       "Deployment support and documentation",
     ],
-    timeline: "2–4 weeks",
+    timeline: "3–5 weeks",
     price: "Starting at $3,500",
   },
 ];

@@ -10,11 +10,10 @@ import { caseStudies } from "@/lib/caseStudies";
 
 const serviceSnapshot = services.slice(0, 3);
 const featuredCaseStudy =
-  caseStudies.find((study) => study.slug === "willow-and-pine") ?? caseStudies[0];
-const featuredBadges = [
-  featuredCaseStudy.category,
-  ...featuredCaseStudy.tech,
-];
+  caseStudies.find((study) => study.slug === "willow-and-pine-tea-co") ?? caseStudies[0];
+const featuredBadges = Array.from(
+  new Set([featuredCaseStudy.category, ...featuredCaseStudy.tech])
+);
 
 export default function HomePage() {
   return (
@@ -99,7 +98,7 @@ export default function HomePage() {
               {featuredBadges.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-brand-sage/30 px-3 py-1"
+                  className="rounded-md border border-white/5 bg-brand-night/60 px-3 py-1 text-brand-sand/80"
                 >
                   {tech}
                 </span>
