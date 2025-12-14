@@ -28,8 +28,8 @@
     "glob": "^10.4.6"
   },
   "engines": {
-    "node": ">=18.18.0",
-    "npm": ">=9.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "packageManager": "npm@10.9.2"
 }
