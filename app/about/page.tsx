@@ -4,6 +4,8 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import Testimonial from "@/components/Testimonial";
+import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
   title: "About Andrew Cox & SmalCoda | Web Designer in Hackensack, NJ",
@@ -131,6 +133,29 @@ export default function AboutPage() {
                 {tool}
               </span>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container className="space-y-8">
+          <div className="text-center">
+            <p className="eyebrow">Client feedback</p>
+            <h2 className="section-heading">What Clients Say</h2>
+          </div>
+          <div className="mx-auto max-w-3xl">
+            {testimonials
+              .filter((t) => t.id === "bill-ashtin-communications")
+              .map((testimonial) => (
+                <Testimonial
+                  key={testimonial.id}
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  role={testimonial.role}
+                  company={testimonial.company}
+                  rating={testimonial.rating}
+                />
+              ))}
           </div>
         </Container>
       </Section>

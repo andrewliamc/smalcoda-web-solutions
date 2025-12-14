@@ -4,8 +4,10 @@ import CTASection from "@/components/CTASection";
 import ProcessStep from "@/components/ProcessStep";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
+import Testimonial from "@/components/Testimonial";
 import { services } from "@/data/services";
 import { processSteps } from "@/data/processSteps";
+import { testimonials } from "@/data/testimonials";
 import { caseStudies } from "@/lib/caseStudies";
 
 const serviceSnapshot = services.slice(0, 3);
@@ -23,15 +25,15 @@ export default function HomePage() {
           <div className="space-y-6">
             <h1 className="eyebrow">SmalCoda Web Solutions</h1>
             <h2 className="text-4xl font-heading text-brand-sand sm:text-5xl md:text-6xl">
-              Small code. Big impact.
+              Your Business Deserves a Website That Actually Works
             </h2>
             <p className="text-lg text-brand-sand/80">
-              SmalCoda Web Solutions builds calm, modern, handcrafted websites for small businesses and creative teams across Hackensack, Bergen County, and North Jersey. We design clean interfaces, develop fast and accessible sites, and help local businesses create a digital presence that feels as good as it looks.
+              Modern, mobile-first web design for small businesses in Hackensack and Northern New Jersey. Clean code. Clear timelines. Transparent pricing starting at $2,500.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact">Start a project</Button>
+              <Button href="/contact">Book Free Consultation</Button>
               <Button href="/work" variant="secondary">
-                View recent work
+                View Our Work
               </Button>
             </div>
           </div>
@@ -175,9 +177,32 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <Section>
+        <Container className="space-y-8">
+          <div className="text-center">
+            <p className="eyebrow">Client feedback</p>
+            <h2 className="section-heading">What Clients Say</h2>
+          </div>
+          <div className="mx-auto max-w-3xl">
+            {testimonials
+              .filter((t) => t.id === "bill-ashtin-communications")
+              .map((testimonial) => (
+                <Testimonial
+                  key={testimonial.id}
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  role={testimonial.role}
+                  company={testimonial.company}
+                  rating={testimonial.rating}
+                />
+              ))}
+          </div>
+        </Container>
+      </Section>
+
       <CTASection
         title="Ready for a calmer, clearer web presence?"
-        description="Tell me about your goals and I’ll share a tailored plan, timeline, and investment range."
+        description="Tell me about your goals and I'll share a tailored plan, timeline, and investment range."
         primaryLabel="Start a project"
         primaryHref="/contact"
         secondaryLabel="View the work"
