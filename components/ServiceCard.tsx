@@ -7,16 +7,25 @@ import Button from "./Button";
 type ServiceCardProps = {
   service: Service;
   compact?: boolean;
+  popular?: boolean;
   className?: string;
 };
 
 export function ServiceCard({
   service,
   compact = false,
+  popular = false,
   className,
 }: ServiceCardProps) {
   return (
-    <Card className={cn("h-full flex flex-col gap-4", className)}>
+    <Card className={cn("h-full flex flex-col gap-4 relative", className)}>
+      {popular && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="rounded-full bg-brand-sage px-4 py-1 text-xs font-medium text-brand-night shadow-md">
+            ⭐ MOST POPULAR
+          </span>
+        </div>
+      )}
       <div className="space-y-2">
         <h3 className="text-2xl font-heading text-brand-sand">{service.title}</h3>
         <p className="text-brand-sand/80">{service.summary}</p>

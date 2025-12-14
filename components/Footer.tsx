@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "./Container";
+import NewsletterSignup from "./NewsletterSignup";
 
 const navigation = [
   { href: "/services", label: "Services" },
@@ -108,6 +109,10 @@ export function Footer() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-12 border-t border-white/5 pt-8">
+          <NewsletterSignup variant="compact" />
         </div>
       </Container>
       <div className="border-t border-white/5">

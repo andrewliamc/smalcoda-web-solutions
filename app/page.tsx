@@ -5,6 +5,7 @@ import ProcessStep from "@/components/ProcessStep";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import Testimonial from "@/components/Testimonial";
+import LeadMagnet from "@/components/LeadMagnet";
 import { services } from "@/data/services";
 import { processSteps } from "@/data/processSteps";
 import { testimonials } from "@/data/testimonials";
@@ -31,7 +32,9 @@ export default function HomePage() {
               Modern, mobile-first web design for small businesses in Hackensack and Northern New Jersey. Clean code. Clear timelines. Transparent pricing starting at $2,500.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact">Book Free Consultation</Button>
+              <Button href="https://calendar.app.google/vSneyr2TZtLJubmt6" target="_blank" rel="noopener noreferrer">
+                Book Free Consultation
+              </Button>
               <Button href="/work" variant="secondary">
                 View Our Work
               </Button>
@@ -197,6 +200,12 @@ export default function HomePage() {
                 />
               ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section tone="muted">
+        <Container>
+          <LeadMagnet />
         </Container>
       </Section>
 

@@ -24,10 +24,11 @@ const tools = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel", "Figm
 
 const contact = [
   { label: "Email", value: "hello@smalcoda.studio", href: "mailto:hello@smalcoda.studio", preferred: true },
+  { label: "Book a Call", value: "15-Minute Discovery Call", href: "https://calendar.app.google/vSneyr2TZtLJubmt6", external: true },
   { label: "Phone", value: "201-903-3854", href: "tel:+12019033854" },
-  { label: "LinkedIn", value: "linkedin.com/in/andrewliamcox", href: "https://www.linkedin.com/in/andrewliamcox/" },
-  { label: "GitHub", value: "github.com/andrewliamc", href: "https://github.com/andrewliamc" },
-  { label: "Portfolio", value: "andrewliamdesigns.com", href: "https://andrewliamdesigns.com" },
+  { label: "LinkedIn", value: "linkedin.com/in/andrewliamcox", href: "https://www.linkedin.com/in/andrewliamcox/", external: true },
+  { label: "GitHub", value: "github.com/andrewliamc", href: "https://github.com/andrewliamc", external: true },
+  { label: "Portfolio", value: "andrewliamdesigns.com", href: "https://andrewliamdesigns.com", external: true },
 ];
 
 export default function AboutPage() {
@@ -179,8 +180,8 @@ export default function AboutPage() {
                   <a
                     href={item.href}
                     className="block text-brand-sand/90 transition hover:text-brand-sage"
-                    target={item.label === "LinkedIn" || item.label === "GitHub" || item.label === "Portfolio" ? "_blank" : undefined}
-                    rel={item.label === "LinkedIn" || item.label === "GitHub" || item.label === "Portfolio" ? "noopener noreferrer" : undefined}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                   >
                     {item.value}
                   </a>

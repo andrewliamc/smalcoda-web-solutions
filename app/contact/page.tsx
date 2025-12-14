@@ -134,18 +134,35 @@ export default async function ContactPage({
                   </li>
                 ))}
               </ul>
-              <div className="rounded-2xl border border-white/10 bg-brand-moss/60 p-5 text-sm text-brand-sand/80">
-                <p className="font-medium text-brand-sage">Prefer email?</p>
-                <p>
-                  Reach out at{" "}
-                  <a
-                    href="mailto:hello@smalcoda.studio"
-                    className="font-semibold text-brand-sage hover:text-brand-sand"
-                  >
-                    hello@smalcoda.studio
-                  </a>
-                  . I’ll reply with a short fit check and booking link.
-                </p>
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-white/10 bg-brand-moss/60 p-5 text-sm text-brand-sand/80">
+                  <p className="font-medium text-brand-sage">Prefer to schedule a call?</p>
+                  <p>
+                    Book a{" "}
+                    <a
+                      href="https://calendar.app.google/vSneyr2TZtLJubmt6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-brand-sage hover:text-brand-sand"
+                    >
+                      free 15-minute discovery call
+                    </a>
+                    {" "}to discuss your project and get a tailored plan.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-brand-moss/60 p-5 text-sm text-brand-sand/80">
+                  <p className="font-medium text-brand-sage">Prefer email?</p>
+                  <p>
+                    Reach out at{" "}
+                    <a
+                      href="mailto:hello@smalcoda.studio"
+                      className="font-semibold text-brand-sage hover:text-brand-sand"
+                    >
+                      hello@smalcoda.studio
+                    </a>
+                    . I'll reply within 1 business day.
+                  </p>
+                </div>
               </div>
             </div>
 
