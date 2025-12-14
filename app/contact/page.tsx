@@ -7,9 +7,9 @@ import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact SmalCoda | Free Consultation | Hackensack Web Design",
   description:
-    "Tell SmalCoda Web Solutions about your project. Expect a quick reply with a fit check, rough scope, and next steps.",
+    "Get a free consultation for your web design project. Email, phone, or book a call. Serving Hackensack, Northern NJ, and NYC. Response within 24 hours.",
 };
 
 async function handleContact(formData: FormData) {
@@ -87,15 +87,16 @@ async function handleContact(formData: FormData) {
   return redirect("/contact?success=1");
 }
 
-export default function ContactPage({
+export default async function ContactPage({
   searchParams,
 }: {
-  searchParams?: { success?: string; error?: string };
+  searchParams?: Promise<{ success?: string; error?: string }>;
 }) {
+  const params = await searchParams;
   const successMessage =
-    searchParams?.success === "1" ? "Thanks! Your message has been sent." : "";
+    params?.success === "1" ? "Thanks! Your message has been sent." : "";
   const errorMessage =
-    typeof searchParams?.error === "string" ? searchParams.error : "";
+    typeof params?.error === "string" ? params.error : "";
 
   return (
     <>

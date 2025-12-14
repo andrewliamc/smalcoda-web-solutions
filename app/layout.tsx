@@ -35,10 +35,16 @@ const schemaData = {
   name: "SmalCoda Web Solutions",
   url: "https://smalcoda.studio",
   description:
-    "SmalCoda Web Solutions builds clean, modern websites for small businesses in Hackensack and Bergen County, offering web design, web development, and Next.js builds.",
-  telephone: "+1-201-903-3584",
+    "Modern web design and development studio specializing in Next.js, React, and TypeScript for small businesses in Hackensack and Northern New Jersey.",
+  founder: {
+    "@type": "Person",
+    name: "Andrew Cox",
+    jobTitle: "Front End Engineer & UI Designer",
+    url: "https://www.linkedin.com/in/andrewliamcox/",
+  },
+  telephone: "+1-201-903-3854",
   email: "hello@smalcoda.studio",
-  priceRange: "$$",
+  priceRange: "$$-$$$",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Hackensack",
@@ -49,29 +55,21 @@ const schemaData = {
     {
       "@type": "City",
       name: "Hackensack",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Hackensack",
-        addressRegion: "NJ",
-        addressCountry: "US",
+      containedInPlace: {
+        "@type": "State",
+        name: "New Jersey",
       },
     },
     {
-      "@type": "AdministrativeArea",
-      name: "Bergen County",
-      address: {
-        "@type": "PostalAddress",
-        addressRegion: "NJ",
-        addressCountry: "US",
-      },
+      "@type": "Place",
+      name: "Northern New Jersey",
     },
     {
-      "@type": "AdministrativeArea",
-      name: "North Jersey",
-      address: {
-        "@type": "PostalAddress",
-        addressRegion: "NJ",
-        addressCountry: "US",
+      "@type": "City",
+      name: "New York City",
+      containedInPlace: {
+        "@type": "State",
+        name: "New York",
       },
     },
   ],
@@ -100,39 +98,49 @@ const schemaData = {
     "Cafe websites",
     "Landing pages",
     "Website refresh",
-    "SEO-optimization",
+    "SEO optimization",
   ],
   sameAs: [
-    "https://www.instagram.com/smalcoda",
-    "https://www.linkedin.com/company/smalcodawebsolutions",
-    "https://www.facebook.com/smalcodawebsolutions",
-    "https://www.youtube.com/@smalcodawebsolutions",
+    "https://www.linkedin.com/in/andrewliamcox/",
+    "https://github.com/andrewliamc",
+    "https://www.linkedin.com/company/smalcoda/",
+    "https://www.instagram.com/smalcoda/",
   ],
 };
 
 export const metadata: Metadata = {
   title: {
-    default: "SmalCoda Web Solutions | Small code. Big impact.",
-    template: "%s | SmalCoda Web Solutions",
+    default: "Web Design & Development in Hackensack, NJ | SmalCoda",
+    template: "%s | SmalCoda",
   },
   description:
-    "SmalCoda Web Solutions builds modern, handcrafted web experiences for small businesses and creative teams.",
+    "Custom Next.js websites for small businesses in Hackensack & Northern NJ. Modern, fast, accessible design. Starting at $2,500. Free consultation.",
   openGraph: {
-    title: "SmalCoda Web Solutions",
+    title: "SmalCoda Web Solutions | Web Design in Hackensack, NJ",
     description:
-      "A calm, design-forward web studio crafting modern sites that feel as good as they perform.",
+      "Modern, fast, accessible websites for small businesses in Hackensack and Northern New Jersey. Built with Next.js and React.",
     url: "https://smalcoda.studio",
     siteName: "SmalCoda Web Solutions",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SmalCoda Web Solutions - Modern Web Design in Hackensack, NJ",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SmalCoda Web Solutions",
+    title: "SmalCoda Web Solutions | Hackensack Web Design",
     description:
-      "Small code. Big impact. Modern web design and development for thoughtful teams.",
+      "Modern websites for small businesses in Hackensack & Northern NJ. Next.js development with care plans. Starting at $2,500.",
+    images: ["/og-image.png"],
   },
   metadataBase: new URL("https://smalcoda.studio"),
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
@@ -147,7 +155,7 @@ export default function RootLayout({
         {/* Google tag (gtag.js) */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-8YMBYTM6LV"
+          src="https://www.googletagmanager.com/gtag/js?id=G-376699974"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -156,7 +164,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-8YMBYTM6LV');
+              gtag('config', 'G-376699974');
             `,
           }}
         />

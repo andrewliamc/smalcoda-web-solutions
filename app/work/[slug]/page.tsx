@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
+import CTASection from "@/components/CTASection";
 import { caseStudies } from "@/lib/caseStudies";
 
 type Props = {
@@ -86,9 +87,15 @@ export default async function CaseStudyPage({ params }: Props) {
                 <span className="rounded-full bg-white/5 px-3 py-1 text-brand-sage">
                   {study.category}
                 </span>
-                <span className="rounded-full border border-brand-sage/30 px-3 py-1">
-                  Case study
-                </span>
+                {study.isConceptDemo ? (
+                  <span className="rounded-full border border-brand-sage/50 bg-brand-sage/10 px-3 py-1 font-medium text-brand-sage">
+                    Concept Demonstration
+                  </span>
+                ) : (
+                  <span className="rounded-full border border-brand-sage/30 px-3 py-1">
+                    Case study
+                  </span>
+                )}
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-heading text-brand-sand md:text-5xl">
@@ -187,6 +194,17 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </Container>
       </Section>
+
+      {study.isConceptDemo && (
+        <CTASection
+          title="Want this approach for your business?"
+          description="This concept demonstrates how we think about design and technical implementation. Let's discuss how we can apply these strategies to your project."
+          primaryLabel="Book Free Consultation"
+          primaryHref="/contact"
+          secondaryLabel="View Services"
+          secondaryHref="/services"
+        />
+      )}
     </>
   );
 }

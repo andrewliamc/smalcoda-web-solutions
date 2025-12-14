@@ -1,0 +1,11 @@
+# robots.txt for SmalCoda Web Solutions
+# https://smalcoda.studio
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any exist)
+# Disallow: /admin/
+# Disallow: /api/
+
+Sitemap: https://smalcoda.studio/sitemap.xml

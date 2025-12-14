@@ -7,9 +7,9 @@ import Section from "@/components/Section";
 import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Portfolio & Case Studies | Modern Web Design",
   description:
-    "Selected projects from SmalCoda Web Solutions — custom sites built with care, clarity, and performance.",
+    "View concept demonstrations of modern web design projects including ecommerce, restaurant sites, and studio websites built with Next.js and React.",
 };
 
 export default function WorkPage() {

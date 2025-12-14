@@ -7,9 +7,9 @@ import Button from "@/components/Button";
 import { processSteps } from "@/data/processSteps";
 
 export const metadata: Metadata = {
-  title: "Process",
+  title: "Our Web Design Process | Discover, Design, Build, Launch",
   description:
-    "A calm, transparent process that guides you from discovery through launch and beyond.",
+    "Our 4-phase web design process: Discover, Design, Build, Launch. Clear timelines, structured feedback, calm collaboration. See how we work.",
 };
 
 export default function ProcessPage() {

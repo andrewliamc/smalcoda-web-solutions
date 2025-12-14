@@ -10,9 +10,9 @@ import { faqs } from "@/data/faqs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Web Design Services & Pricing | Starting at $2,500",
   description:
-    "Clear, custom website services for small businesses and creative teams. Built with a calm, collaborative process.",
+    "Transparent web design pricing: Starter ($2,500), Professional ($5,000), Custom ($7,500+). Next.js development with care plans. View packages.",
 };
 
 export default function ServicesPage() {
