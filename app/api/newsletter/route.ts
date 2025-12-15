@@ -12,32 +12,46 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Connect to your email service provider (ConvertKit, Mailchimp, Buttondown, etc.)
-    // For now, this is a placeholder that logs the email
-    console.log("Newsletter signup:", email);
+    const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY;
+    const MAILERLITE_GROUP_ID = process.env.MAILERLITE_GROUP_ID_GENERAL;
 
-    // PLACEHOLDER: Replace this with actual email service integration
-    // Example for ConvertKit:
-    // const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
-    // const CONVERTKIT_FORM_ID = process.env.CONVERTKIT_FORM_ID;
-    //
-    // const response = await fetch(
-    //   `https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`,
-    //   {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({
-    //       api_key: CONVERTKIT_API_KEY,
-    //       email: email,
-    //     }),
-    //   }
-    // );
-    //
-    // if (!response.ok) {
-    //   throw new Error("Failed to subscribe");
-    // }
+    if (!MAILERLITE_API_KEY || !MAILERLITE_GROUP_ID) {
+      console.error("MailerLite API key or Group ID not configured");
+      return NextResponse.json(
+        { error: "Email service not configured." },
+        { status: 500 }
+      );
+    }
 
-    // For now, just return success
+    // Subscribe to MailerLite General Subscribers group
+    const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${MAILERLITE_API_KEY}`,
+      },
+      body: JSON.stringify({
+        email: email,
+        groups: [MAILERLITE_GROUP_ID],
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("MailerLite API error:", data);
+
+      // Handle duplicate subscriber (already subscribed)
+      if (response.status === 422 || response.status === 409) {
+        return NextResponse.json(
+          { error: "You're already subscribed!" },
+          { status: 400 }
+        );
+      }
+
+      throw new Error("Failed to subscribe to newsletter");
+    }
+
     return NextResponse.json(
       { success: true, message: "Successfully subscribed!" },
       { status: 200 }

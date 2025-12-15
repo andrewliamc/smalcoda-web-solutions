@@ -3,10 +3,12 @@ import Container from "./Container";
 import NewsletterSignup from "./NewsletterSignup";
 
 const navigation = [
+  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 

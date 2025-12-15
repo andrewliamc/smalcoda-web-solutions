@@ -12,12 +12,45 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Connect to your email service provider and add to mailing list
-    // For now, this is a placeholder that logs the email
-    console.log("Checklist download request:", email);
+    const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY;
+    const MAILERLITE_GROUP_ID = process.env.MAILERLITE_GROUP_ID_CHECKLIST;
 
-    // PLACEHOLDER: Add email to your mailing list
-    // Example for ConvertKit or Mailchimp integration here
+    if (!MAILERLITE_API_KEY || !MAILERLITE_GROUP_ID) {
+      console.error("MailerLite API key or Group ID not configured");
+      return NextResponse.json(
+        { error: "Email service not configured." },
+        { status: 500 }
+      );
+    }
+
+    // Subscribe to MailerLite Checklist group
+    const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${MAILERLITE_API_KEY}`,
+      },
+      body: JSON.stringify({
+        email: email,
+        groups: [MAILERLITE_GROUP_ID],
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("MailerLite API error:", data);
+
+      // Handle duplicate subscriber (already subscribed)
+      if (response.status === 422 || response.status === 409) {
+        return NextResponse.json(
+          { error: "You're already subscribed!" },
+          { status: 400 }
+        );
+      }
+
+      throw new Error("Failed to subscribe to checklist");
+    }
 
     // Return success with download URL
     return NextResponse.json(
