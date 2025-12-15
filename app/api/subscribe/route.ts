@@ -12,37 +12,38 @@ export async function POST(request: Request) {
       );
     }
 
-    const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY;
-    const MAILERLITE_GROUP_ID = process.env.MAILERLITE_GROUP_ID_CHECKLIST;
+    const BREVO_API_KEY = process.env.BREVO_API_KEY;
+    const BREVO_GROUP_ID = process.env.BREVO_GROUP_ID_CHECKLIST;
 
-    if (!MAILERLITE_API_KEY || !MAILERLITE_GROUP_ID) {
-      console.error("MailerLite API key or Group ID not configured");
+    if (!BREVO_API_KEY || !BREVO_GROUP_ID) {
+      console.error("Brevo API key or Group ID not configured");
       return NextResponse.json(
         { error: "Email service not configured." },
         { status: 500 }
       );
     }
 
-    // Subscribe to MailerLite Checklist group
-    const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+    // Subscribe to Brevo Checklist group
+    const response = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${MAILERLITE_API_KEY}`,
+        "api-key": BREVO_API_KEY,
       },
       body: JSON.stringify({
         email: email,
-        groups: [MAILERLITE_GROUP_ID],
+        listIds: [parseInt(BREVO_GROUP_ID)],
+        updateEnabled: false,
       }),
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("MailerLite API error:", data);
+      console.error("Brevo API error:", data);
 
       // Handle duplicate subscriber (already subscribed)
-      if (response.status === 422 || response.status === 409) {
+      if (response.status === 400 && data.code === "duplicate_parameter") {
         return NextResponse.json(
           { error: "You're already subscribed!" },
           { status: 400 }
