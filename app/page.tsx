@@ -13,7 +13,7 @@ import { caseStudies } from "@/lib/caseStudies";
 
 const serviceSnapshot = services.slice(0, 3);
 const featuredCaseStudy =
-  caseStudies.find((study) => study.slug === "willow-and-pine-tea-co") ?? caseStudies[0];
+  caseStudies.find((study) => study.slug === "ashtin-communications") ?? caseStudies[0];
 const featuredBadges = Array.from(
   new Set([featuredCaseStudy.category, ...featuredCaseStudy.tech])
 );
@@ -96,8 +96,7 @@ export default function HomePage() {
             <p className="eyebrow">Featured project</p>
             <h2 className="section-heading">{featuredCaseStudy.title}</h2>
             <p className="text-brand-sand/80">
-              Brand-forward ecommerce experience with sensory storytelling, tasting notes,
-              and a calm, high-end shopping flow.
+              {featuredCaseStudy.snapshotDescription}
             </p>
             <div className="flex flex-wrap gap-2 text-xs text-brand-sand/70">
               {featuredBadges.map((tech) => (
@@ -120,13 +119,13 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(159,189,170,0.35),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(194,169,138,0.25),transparent_30%)]" />
             <div className="relative flex h-full flex-col justify-end p-6">
               <p className="text-xs uppercase tracking-[0.24em] text-brand-sage/70">
-                Mockup space
+                Client Work
               </p>
               <h3 className="mt-2 text-2xl font-heading text-brand-sand">
-                Calm, tactile UI with conversion paths built in.
+                Professional B2B design with clear conversion paths.
               </h3>
               <p className="text-sm text-brand-sand/70">
-                Placeholder visual for the featured project story.
+                Modern website for a 27-year commercial radio provider.
               </p>
             </div>
           </div>

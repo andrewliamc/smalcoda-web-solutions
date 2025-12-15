@@ -182,48 +182,64 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: "harvesthub-meal-planner",
-    title: "HarvestHub Meal Planner",
-    category: "SaaS",
-    liveUrl: "https://harvesthub.vercel.app",
-    isConceptDemo: true,
-    snapshotTitle: "A clean, wellness-focused SaaS experience crafted for clarity, trust, and conversions.",
+    slug: "ashtin-communications",
+    title: "Ashtin Communications",
+    category: "B2B Service Website",
+    location: "Gainesville, FL",
+    liveUrl: "https://www.ashtincomm.com",
+    isConceptDemo: false,
+    snapshotTitle: "Professional, conversion-focused website for a commercial two-way radio provider",
     snapshotDescription:
-      "A marketing layer built in Next.js featuring scannable value props, pricing tiers, UI previews, and mobile-first optimization for founders ready to launch.",
+      "A clean, modern B2B website showcasing 27+ years of expertise in radio sales, rentals, repairs, and service for businesses across North Florida.",
+    metaTitle: "Ashtin Communications – Client Website | SmalCoda Web Solutions",
+    metaDescription:
+      "Client project: Professional B2B website for Ashtin Communications, a commercial two-way radio provider in Gainesville, FL, featuring modern design, mobile optimization, and clear conversion paths.",
     summary:
-      "Concept demonstration showcasing a conversion-focused marketing site for a meal-planning SaaS, with clear value props, pricing, and product storytelling.",
-    tags: [],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "SaaS", "Product Marketing", "Landing Page"],
+      "Professional B2B website for a 27-year commercial two-way radio provider, featuring modern design, mobile-first UX, and clear paths to quote requests and service information.",
+    tags: ["Client Work"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "SEO", "B2B", "Local Business"],
     sections: [
       {
         id: "overview",
         title: "Overview",
         body:
-          "This concept demonstrates how SmalCoda approaches SaaS marketing sites. The demonstration focuses on communicating value quickly through clear messaging, product previews, and strong conversion paths—perfect for early-stage teams that need to explain their product clearly and drive signups.",
+          "Ashtin Communications is a commercial two-way radio provider established in 1997, serving businesses across Gainesville and North Florida. The client needed a modern website to replace their outdated online presence and better showcase their expertise in Motorola radio sales, rentals, airtime, and professional repair services. The goal was to establish credibility, improve local SEO, and create clear conversion paths for quote requests.",
+      },
+      {
+        id: "challenge",
+        title: "Challenge",
+        body:
+          "The client had no functional website, which meant potential customers couldn't find basic information about services, products, or contact details online. For a business serving commercial clients who often search online before making purchasing decisions, this created a significant barrier to growth. The website needed to convey 27+ years of expertise while making it easy for busy business owners to request quotes and understand service offerings.",
       },
       {
         id: "approach",
         title: "Design Approach",
         body:
-          "The messaging framework is built around four core benefits: save time, reduce waste, eat better, and make planning effortless. UI mockups woven into the page show features like AI recipe suggestions, calendar planning, and grocery list generation. The balance between friendly, wellness-focused visuals and crisp messaging creates trust.",
+          "The design prioritizes clarity and professionalism. A blue color scheme aligns with the Motorola partnership branding while maintaining a modern, trustworthy aesthetic. The site is structured around three core service areas: Radio Sales, Repairs & Service, and Rentals & Airtime. Each section uses card-based layouts with clear CTAs. Customer testimonials and the '27+ Years' credibility marker are prominently featured to build trust.",
         hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Landing hero + dashboard mockup",
+        imagePlaceholderLabel: "Homepage hero with service cards and testimonials",
       },
       {
         id: "ux",
         title: "UX & UI Design",
         body:
-          "The hero pairs a strong headline with an app preview and primary CTA. Feature blocks, example weekly plans, pricing tiers, and testimonials guide visitors toward signup. The layout is intentionally scannable with clear typography and ample breathing room to reduce cognitive load.",
+          "The navigation is streamlined to six key pages: Home, About, Products, Rentals & Airtime, Repairs & Service, and Contact. Multiple 'Request Quote' CTAs are strategically placed throughout the site to capture leads. The mobile experience uses a responsive toggle menu and tap-friendly buttons. High-contrast white text on dark blue backgrounds ensures readability, while testimonials provide social proof above the fold.",
         hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Pricing table + testimonials layout",
+        imagePlaceholderLabel: "Mobile navigation and service detail pages",
       },
       {
         id: "engineering",
         title: "Technical Implementation",
         body:
-          "Implemented with Next.js and static optimization for performance. Feature data, pricing tiers, and testimonials are modeled as TypeScript objects for easy updates without touching markup. The design system reuses core components and spacing for consistency.",
+          "Built with Next.js and Tailwind CSS for performance and maintainability. The site includes schema markup for local business SEO, helping Ashtin Communications appear in local search results. Google Maps integration and geolocation features make it easy for customers to find the physical location. The mobile-first responsive design ensures the site works seamlessly across all devices. Social media links to Facebook and LinkedIn provide additional touchpoints.",
         hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Component map / information architecture",
+        imagePlaceholderLabel: "SEO structure and responsive layouts",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body:
+          "The website successfully launched and gave Ashtin Communications a professional online presence for the first time. The client now appears in Google search results for commercial two-way radio services in Gainesville and North Florida. Quote requests can be easily submitted through multiple entry points, and customers can quickly find service information, products, and contact details. The modern design reflects the quality and professionalism of their 27-year track record.",
       },
     ],
   },

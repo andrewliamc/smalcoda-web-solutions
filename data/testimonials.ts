@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
     id: "bill-ashtin-communications",
     quote:
       "Andrew made the process easy, seamless, and straight-forward for a non-technical person like myself. For years, we had no website because it was too much of a hassle, so our website was empty. Within a week, we were online and appearing in Google Searches.",
-    name: "Bill",
+    name: "Bill C",
     role: "Owner",
     company: "Ashtin Communications, Inc.",
     rating: 5,

@@ -23,28 +23,36 @@
 
 ---
 
-### 2. **Case Study Rebranding** ✓
+### 2. **Case Studies & Portfolio** ✓
 
-All case studies have been rebranded as **"Concept Demonstrations"** to clearly communicate they are portfolio pieces, not client work.
+Portfolio includes both concept demonstrations and real client work.
 
-#### Changes Made:
-- ✅ Added `isConceptDemo: true` flag to all case studies
+#### Concept Demonstrations:
+All concept demos are clearly marked with `isConceptDemo: true` flag to communicate they are portfolio pieces, not client work.
+
+- ✅ Added `isConceptDemo: true` flag to concept demos
 - ✅ Updated case study page template to show "Concept Demonstration" badge
 - ✅ Removed misleading language (fake "Challenge" and "Outcome" sections)
 - ✅ Condensed content to ~300-400 words per case study
 - ✅ Added CTA section: "Want this approach for your business?"
 - ✅ Updated language to focus on "design thinking" and "technical capabilities"
 
-#### Updated Case Studies:
-1. **Willow & Pine Tea Co.** - `/work/willow-and-pine-tea-co`
-2. **Houston's Restaurant Redesign** - `/work/houstons-restaurant-redesign`
-3. **Jacksonville Pottery Studio** - `/work/jacksonville-pottery-studio`
-4. **HarvestHub Meal Planner** - `/work/harvesthub-meal-planner`
+#### Case Studies:
+1. **Ashtin Communications** - `/work/ashtin-communications` (Client Work - FEATURED)
+   - Live site: https://www.ashtincomm.com
+   - Professional B2B website for commercial two-way radio provider
+   - Gainesville, FL | 27+ years in business
+   - Features: Modern design, mobile-first UX, local SEO, conversion optimization
+   - Tech: Next.js, TypeScript, Tailwind CSS, Schema markup
+2. **Willow & Pine Tea Co.** - `/work/willow-and-pine-tea-co` (Concept Demo)
+3. **Houston's Restaurant Redesign** - `/work/houstons-restaurant-redesign` (Concept Demo)
+4. **Jacksonville Pottery Studio** - `/work/jacksonville-pottery-studio` (Concept Demo)
 
 **Files Modified:**
 - `lib/caseStudies.ts`
 - `app/work/[slug]/page.tsx`
 - `app/work/page.tsx`
+- `app/page.tsx`
 
 ---
 
@@ -309,6 +317,26 @@ Updated page titles and descriptions for better SEO:
 - `app/about/page.tsx`
 - `app/blog/[slug]/page.tsx`
 - `data/blogPosts.ts`
+
+---
+
+### 12. **Featured Project Update** ✓
+
+#### Homepage Featured Project:
+- ✅ Replaced HarvestHub Meal Planner with Ashtin Communications as featured project
+- ✅ Updated homepage to dynamically pull featured case study data
+- ✅ Updated featured project description to use case study's `snapshotDescription`
+- ✅ Updated mockup placeholder text to reflect client work
+- ✅ Tech badges now display: "B2B Service Website", "Next.js", "TypeScript", "Tailwind CSS", "SEO", "B2B", "Local Business"
+
+#### Changes:
+- Featured project changed from concept demo (Willow & Pine Tea Co.) to real client work (Ashtin Communications)
+- Homepage now showcases actual client project with live URL
+- Description updated to highlight B2B expertise and conversion-focused design
+- Mockup text changed from "Calm, tactile UI with conversion paths built in" to "Professional B2B design with clear conversion paths"
+
+**Files Modified:**
+- `app/page.tsx`
 
 ---
 
