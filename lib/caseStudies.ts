@@ -109,24 +109,24 @@ export const caseStudies: CaseStudy[] = [
         title: "Design Approach",
         body:
           "The approach starts with content and menu auditing, mapping dishes, categories, and key information into a structured architecture. The homepage acts as a concise overview with hero imagery, primary CTAs, and clear paths into menus and reservations. Rather than oversized PDFs, menus are broken into logical sections with typography and spacing tuned for comfortable reading on all devices. The design uses a restrained palette, understated typography, and subtle motion.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Homepage hero + menu overview",
+        imageSrc: "/houstons-hero.png",
+        imageAlt: "Homepage hero + menu overview",
       },
       {
         id: "ux",
         title: "UX & UI Design",
         body:
           "The interface focuses on key flows: browsing menus, checking hours and location, and booking visits. Sticky navigation keeps essential pages one tap away. Menu pages use section headers, price alignment, and short descriptions for scannability. On mobile, menus use generous line height and tap targets, eliminating the need for pinch-zoom. Callouts highlight signature dishes and limited-availability items.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Mobile-first menu layout",
+        imageSrc: "/houstons-mobile.png",
+        imageAlt: "Mobile-first menu layout",
       },
       {
         id: "engineering",
         title: "Technical Implementation",
         body:
           "Implemented with Next.js App Router and Tailwind CSS, menu data is stored as structured content for easy updates. Pages are statically generated for speed and SEO. Semantic HTML, accessible color contrast, and keyboard-friendly interactions ensure usability. Micro-interactions via Framer Motion add polish without overwhelming. Image optimization keeps performance in check.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Location & hours + reservations flow",
+        imageSrc: "/houstons-location.png",
+        imageAlt: "Location & hours + reservations flow",
       },
     ],
   },
@@ -160,24 +160,24 @@ export const caseStudies: CaseStudy[] = [
         title: "Design Approach",
         body:
           "The approach maps core offerings into clear paths: Classes, Membership, Events, and Studio Info. The streamlined navigation and cohesive homepage tell a single story. Content is rewritten into scannable summaries with consistent CTAs. The brand language balances warmth and community with clarity about pricing, session length, and experience levels.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Homepage hero + class and membership highlights",
+        imageSrc: "/jacksonville-hero.png",
+        imageAlt: "Homepage hero + class and membership highlights",
       },
       {
         id: "ux",
         title: "UX & UI Design",
         body:
           "The homepage uses a full-width hero with a soft, neutral palette and pottery imagery. Primary CTAs drive bookings while secondary CTAs guide experienced makers to memberships. Card-based layouts organize classes by type with price ranges and experience levels. The design uses soft neutrals, terracotta accents, and rounded cards to echo clay and the tactile studio feel.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Feature grid: classes, memberships, events, team",
+        imageSrc: "/jacksonville-grid.png",
+        imageAlt: "Feature grid: classes, memberships, events, team",
       },
       {
         id: "engineering",
         title: "Technical Implementation",
         body:
           "Built with Next.js App Router and Tailwind CSS using reusable components. Hero sections, feature grids, and card layouts share building blocks for easy expansion. Server components handle static content while lightweight client components manage interaction. Mobile-first spacing and tap-friendly targets ensure smooth booking on all devices. SEO-friendly structure supports local discovery.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Responsive layouts + component map",
+        imageSrc: "/jacksonville-responsive.png",
+        imageAlt: "Responsive layouts + component map",
       },
     ],
   },
@@ -216,24 +216,24 @@ export const caseStudies: CaseStudy[] = [
         title: "Design Approach",
         body:
           "The design prioritizes clarity and professionalism. A blue color scheme aligns with the Motorola partnership branding while maintaining a modern, trustworthy aesthetic. The site is structured around three core service areas: Radio Sales, Repairs & Service, and Rentals & Airtime. Each section uses card-based layouts with clear CTAs. Customer testimonials and the '27+ Years' credibility marker are prominently featured to build trust.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Homepage hero with service cards and testimonials",
+        imageSrc: "/asthin-hero.png",
+        imageAlt: "Homepage hero with service cards and testimonials",
       },
       {
         id: "ux",
         title: "UX & UI Design",
         body:
           "The navigation is streamlined to six key pages: Home, About, Products, Rentals & Airtime, Repairs & Service, and Contact. Multiple 'Request Quote' CTAs are strategically placed throughout the site to capture leads. The mobile experience uses a responsive toggle menu and tap-friendly buttons. High-contrast white text on dark blue backgrounds ensures readability, while testimonials provide social proof above the fold.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "Mobile navigation and service detail pages",
+        imageSrc: "/asthin-pricing.png",
+        imageAlt: "Mobile navigation and service detail pages",
       },
       {
         id: "engineering",
         title: "Technical Implementation",
         body:
           "Built with Next.js and Tailwind CSS for performance and maintainability. The site includes schema markup for local business SEO, helping Ashtin Communications appear in local search results. Google Maps integration and geolocation features make it easy for customers to find the physical location. The mobile-first responsive design ensures the site works seamlessly across all devices. Social media links to Facebook and LinkedIn provide additional touchpoints.",
-        hasImagePlaceholder: true,
-        imagePlaceholderLabel: "SEO structure and responsive layouts",
+        imageSrc: "/asthin-architecture.png",
+        imageAlt: "SEO structure and responsive layouts",
       },
       {
         id: "outcome",

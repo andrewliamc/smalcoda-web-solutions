@@ -6,6 +6,7 @@ import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import Testimonial from "@/components/Testimonial";
 import LeadMagnet from "@/components/LeadMagnet";
+import Image from "next/image";
 import { services } from "@/data/services";
 import { processSteps } from "@/data/processSteps";
 import { testimonials } from "@/data/testimonials";
@@ -115,8 +116,15 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="glass relative aspect-[4/3] overflow-hidden rounded-3xl border border-brand-sage/20 bg-gradient-to-br from-brand-moss/70 via-brand-night to-brand-night shadow-card">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(159,189,170,0.35),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(194,169,138,0.25),transparent_30%)]" />
+          <div className="glass relative aspect-[4/3] overflow-hidden rounded-3xl border border-brand-sage/20 shadow-card">
+            <Image
+              src="/asthin-featured.png"
+              alt="Ashtin Communications website preview"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-night/95 via-brand-night/60 to-transparent" />
             <div className="relative flex h-full flex-col justify-end p-6">
               <p className="text-xs uppercase tracking-[0.24em] text-brand-sage/70">
                 Client Work
