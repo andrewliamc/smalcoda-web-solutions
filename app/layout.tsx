@@ -152,6 +152,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="impact-site-verification"
+          value="cf84e634-1160-42ca-9d9e-81a75ac4d509"
+        />
         {/* Google tag (gtag.js) */}
         <script
           async
