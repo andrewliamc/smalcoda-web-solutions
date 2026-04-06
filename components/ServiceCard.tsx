@@ -8,6 +8,7 @@ type ServiceCardProps = {
   service: Service;
   compact?: boolean;
   popular?: boolean;
+  showMeta?: boolean;
   className?: string;
 };
 
@@ -15,6 +16,7 @@ export function ServiceCard({
   service,
   compact = false,
   popular = false,
+  showMeta = true,
   className,
 }: ServiceCardProps) {
   return (
@@ -22,7 +24,6 @@ export function ServiceCard({
       {popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <span className="rounded-full bg-brand-sage px-4 py-1 text-xs font-medium text-brand-night shadow-md">
-            ⭐ MOST POPULAR
           </span>
         </div>
       )}
@@ -45,14 +46,15 @@ export function ServiceCard({
         </div>
       )}
 
-      {!compact ? (
-        <div className="mt-auto flex items-center justify-between text-sm text-brand-sand/80">
-          <span>{service.timeline}</span>
-          <span className="font-medium text-brand-sage">{service.price}</span>
-        </div>
-      ) : (
-        <div className="mt-auto text-sm text-brand-sand/80">{service.timeline}</div>
-      )}
+      {showMeta &&
+        (!compact ? (
+          <div className="mt-auto flex items-center justify-between text-sm text-brand-sand/80">
+            <span>{service.timeline}</span>
+            <span className="font-medium text-brand-sage">{service.price}</span>
+          </div>
+        ) : (
+          <div className="mt-auto text-sm text-brand-sand/80">{service.timeline}</div>
+        ))}
 
       {!compact && (
         <div className="pt-2">

@@ -90,11 +90,7 @@ export default function ServicesPage() {
       <Section>
         <Container className="grid gap-6 md:grid-cols-2">
           {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              popular={service.id === "professional-website"}
-            />
+            <ServiceCard key={service.id} service={service} showMeta={false} />
           ))}
         </Container>
       </Section>
@@ -111,7 +107,7 @@ export default function ServicesPage() {
                 <tr className="border-b border-brand-sage/20">
                   <th className="px-4 py-3 text-left text-sm font-medium text-brand-sage">Feature</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-brand-sage">Starter</th>
-                  <th className="px-4 py-3 text-center text-sm font-medium text-brand-sage">Professional ⭐</th>
+                  <th className="px-4 py-3 text-center text-sm font-medium text-brand-sage">Professional</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-brand-sage">Custom</th>
                 </tr>
               </thead>
@@ -121,12 +117,6 @@ export default function ServicesPage() {
                   <td className="px-4 py-3 text-center text-sm">1-3</td>
                   <td className="px-4 py-3 text-center text-sm">4-6</td>
                   <td className="px-4 py-3 text-center text-sm">8+</td>
-                </tr>
-                <tr className="border-b border-brand-sage/10">
-                  <td className="px-4 py-3 text-sm">Timeline</td>
-                  <td className="px-4 py-3 text-center text-sm">2.5-4 weeks</td>
-                  <td className="px-4 py-3 text-center text-sm">4-6 weeks</td>
-                  <td className="px-4 py-3 text-center text-sm">5-7+ weeks</td>
                 </tr>
                 <tr className="border-b border-brand-sage/10">
                   <td className="px-4 py-3 text-sm">Design Revisions</td>
@@ -163,12 +153,6 @@ export default function ServicesPage() {
                   <td className="px-4 py-3 text-center text-sm">✓</td>
                   <td className="px-4 py-3 text-center text-sm">✓</td>
                   <td className="px-4 py-3 text-center text-sm">✓</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 text-sm font-medium">Price</td>
-                  <td className="px-4 py-3 text-center text-sm font-semibold text-brand-sage">$2,500</td>
-                  <td className="px-4 py-3 text-center text-sm font-semibold text-brand-sage">$5,000</td>
-                  <td className="px-4 py-3 text-center text-sm font-semibold text-brand-sage">$7,500+</td>
                 </tr>
               </tbody>
             </table>
