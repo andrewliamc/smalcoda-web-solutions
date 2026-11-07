@@ -5,8 +5,7 @@ import {
   Inter,
 } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteShell from "@/components/SiteShell";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -180,14 +179,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${dmSans.variable} ${inter.variable} bg-brand-night text-brand-sand`}
       >
-        <div className="relative min-h-screen overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(159,189,170,0.16),transparent_25%),radial-gradient(circle_at_80%_0%,rgba(194,169,138,0.12),transparent_30%)]" />
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </div>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
